@@ -7,10 +7,10 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Dra. Sarah Mitchell - Psicóloga Clínica | Especialista em Transtornos Alimentares",
+  title: "Maria Clara M. Descendente - Psicóloga Clínica | Especialista em Transtornos Alimentares",
   description:
     "Psicóloga Clínica Licenciada especializada em transtornos alimentares, TCC, ACT e treinamento em mindfulness. MSc Neuropsiquiatria, Professora e Palestrante.",
-  generator: "v0.app",
+  generator: "autor",
 }
 
 export default function RootLayout({

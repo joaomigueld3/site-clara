@@ -4,13 +4,16 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, ArrowRight, Instagram, Link, MessageCircle } from "lucide-react"
 import { LanguageSwitcher, type Language } from "@/components/language-switcher"
 import { translations } from "@/lib/translations"
 
 export default function PsychologistLanding() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>("pt")
   const t = translations[currentLanguage]
+  const profilePicture = '/clara-profile-picture.jpg'
+  const logoPicture = '/clara-logo.jpg'
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -19,8 +22,12 @@ export default function PsychologistLanding() {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <Heart className="w-4 h-4 text-primary-foreground" />
+              <div className="w-15 h-15 rounded-full overflow-hidden bg-primary flex items-center justify-center">
+                <img
+                  src={logoPicture} // ALtere o caminho para onde sua imagem está
+                  alt="Logo Maria Clara M. Descendente"
+                  className="w-full h-full object-cover" // Faz a imagem preencher o container de 32x32px
+                />
               </div>
               <span className="font-semibold text-lg">{t.drName}</span>
             </div>
@@ -40,7 +47,14 @@ export default function PsychologistLanding() {
             </div>
             <div className="flex items-center space-x-3">
               <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
-              <Button>{t.bookConsultation}</Button>
+              {/* 1. Use um <a> tag simples para links externos */}
+              <a 
+                  href="https://wa.me/+558191873346" // Substitua pelo link de agendamento/WhatsApp
+                  target="_blank"                        // Opcional: abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
+                <Button>{t.bookConsultation}</Button>
+              </a>              
             </div>
           </div>
         </div>
@@ -62,21 +76,67 @@ export default function PsychologistLanding() {
               <p className="text-lg text-muted-foreground leading-relaxed">{t.heroDescription}</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="https://wa.me/+558191873346"
+                  target="_blank"                        //  abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
                 <Button size="lg" className="text-base">
                   <Calendar className="w-4 h-4 mr-2" />
                   {t.scheduleConsultation}
                 </Button>
+              </a>                
                 <Button variant="outline" size="lg" className="text-base bg-transparent">
                   {t.learnMore}
                 </Button>
               </div>
-            </div>
-
+              {/* NOVO BLOCO: BOTÕES DE REDES SOCIAIS E LINK-IN-BIO */}
+                <div className="flex items-center gap-4 pt-2">
+                    <span className="text-sm font-semibold text-foreground"></span>
+                    
+                    {/* Botão Instagram */}
+                    <a 
+                        href="https://www.instagram.com/claradescendente/" // COLOQUE SEU LINK DO INSTAGRAM
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone Instagram da Lucide. Ajuste se usar outro */}
+                        <Button variant="ghost" size="default" aria-label="Instagram">
+                            <Instagram className="w-10 h-10" />
+                        </Button>
+                    </a>
+                    
+                    {/* Botão WhatsApp (Chamada Direta) */}
+                    <a 
+                        href="https://wa.me/+558191873346" // Link Direto para WhatsApp
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone MessageCircle (para chat) da Lucide */}
+                        <Button variant="ghost" size="default" aria-label="WhatsApp">
+                            <MessageCircle className="w-10 h-10 text-green-500" />
+                        </Button>
+                    </a>
+                    
+                    {/* Botão Lnk.Bio (Link-in-Bio) */}
+                    <a 
+                        href="https://lnk.bio/claradescedente" // COLOQUE SEU LINK-IN-BIO
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone Link ou ExternalLink (para link externo) da Lucide */}
+                        <Button variant="ghost" size="default" aria-label="Lnk.Bio">
+                            <Link className="w-10 h-10 text-accent" />
+                        </Button>
+                    </a>
+                </div>
+                {/* FIM DO NOVO BLOCO */}
+            </div>            
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
+              <div className="w-120 aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
                 <img
-                  src="/professional-female-psychologist-in-office-setting.jpg"
-                  alt="Dra. Sarah Mitchell - Psicóloga Clínica"
+                  src={profilePicture}
+                  alt="Maria Clara M. Descendente - Psicóloga Clínica"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -228,18 +288,16 @@ export default function PsychologistLanding() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>(555) 123-4567</span>
+                  <span>+55 81 9187-3346</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>dr.mitchell@example.com</span>
+                  <span>clara@example.com</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p>123 Wellness Center Drive</p>
-                    <p>Suite 200</p>
-                    <p>San Francisco, CA 94102</p>
+                    <p>Recife, Pernambuco</p>
                   </div>
                 </div>
               </div>
@@ -252,12 +310,17 @@ export default function PsychologistLanding() {
                 <div className="space-y-2">
                   <p className="text-sm font-medium">{t.officeHours}</p>
                   <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
-                  <p className="text-sm text-muted-foreground">{t.friday}</p>
                 </div>
+                <a 
+                  href="https://wa.me/+558191873346" // Substitua pelo link de agendamento/WhatsApp
+                  target="_blank"                        // Opcional: abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
                 <Button className="w-full mt-6">
                   <Calendar className="w-4 h-4 mr-2" />
                   {t.bookAppointment}
                 </Button>
+              </a>                
               </div>
             </Card>
           </div>
@@ -269,8 +332,12 @@ export default function PsychologistLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                <Heart className="w-3 h-3 text-primary-foreground" />
+              <div className="w-15 h-15 rounded-full overflow-hidden bg-primary flex items-center justify-center">
+                <img
+                  src={logoPicture} // ALtere o caminho para onde sua imagem está
+                  alt="Logo Maria Clara M. Descendente"
+                  className="w-full h-full object-cover" // Faz a imagem preencher o container de 32x32px
+                />
               </div>
               <span className="font-medium">
                 {t.drName}, {t.clinicalPsychologist}

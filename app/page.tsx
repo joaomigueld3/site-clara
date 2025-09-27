@@ -11,6 +11,9 @@ import { translations } from "@/lib/translations"
 export default function PsychologistLanding() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>("pt")
   const t = translations[currentLanguage]
+  const profilePicture = '/clara-profile-picture.jpg'
+  const logoPicture = '/clara-logo.jpg'
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -19,8 +22,12 @@ export default function PsychologistLanding() {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <Heart className="w-4 h-4 text-primary-foreground" />
+              <div className="w-15 h-15 rounded-full overflow-hidden bg-primary flex items-center justify-center">
+                <img
+                  src={logoPicture} // ALtere o caminho para onde sua imagem está
+                  alt="Logo Maria Clara M. Descendente"
+                  className="w-full h-full object-cover" // Faz a imagem preencher o container de 32x32px
+                />
               </div>
               <span className="font-semibold text-lg">{t.drName}</span>
             </div>
@@ -73,10 +80,10 @@ export default function PsychologistLanding() {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
+              <div className="w-120 aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
                 <img
-                  src="/professional-female-psychologist-in-office-setting.jpg"
-                  alt="Dra. Sarah Mitchell - Psicóloga Clínica"
+                  src={profilePicture}
+                  alt="Maria Clara M. Descendente - Psicóloga Clínica"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -228,18 +235,16 @@ export default function PsychologistLanding() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>(555) 123-4567</span>
+                  <span>+55 81 9187-3346</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>dr.mitchell@example.com</span>
+                  <span>clara@example.com</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p>123 Wellness Center Drive</p>
-                    <p>Suite 200</p>
-                    <p>San Francisco, CA 94102</p>
+                    <p>Recife, Pernambuco</p>
                   </div>
                 </div>
               </div>
@@ -252,7 +257,6 @@ export default function PsychologistLanding() {
                 <div className="space-y-2">
                   <p className="text-sm font-medium">{t.officeHours}</p>
                   <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
-                  <p className="text-sm text-muted-foreground">{t.friday}</p>
                 </div>
                 <Button className="w-full mt-6">
                   <Calendar className="w-4 h-4 mr-2" />
@@ -269,8 +273,12 @@ export default function PsychologistLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                <Heart className="w-3 h-3 text-primary-foreground" />
+              <div className="w-15 h-15 rounded-full overflow-hidden bg-primary flex items-center justify-center">
+                <img
+                  src={logoPicture} // ALtere o caminho para onde sua imagem está
+                  alt="Logo Maria Clara M. Descendente"
+                  className="w-full h-full object-cover" // Faz a imagem preencher o container de 32x32px
+                />
               </div>
               <span className="font-medium">
                 {t.drName}, {t.clinicalPsychologist}

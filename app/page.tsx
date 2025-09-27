@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, ArrowRight, Instagram, Link, MessageCircle } from "lucide-react"
 import { LanguageSwitcher, type Language } from "@/components/language-switcher"
 import { translations } from "@/lib/translations"
 
@@ -47,7 +47,14 @@ export default function PsychologistLanding() {
             </div>
             <div className="flex items-center space-x-3">
               <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
-              <Button>{t.bookConsultation}</Button>
+              {/* 1. Use um <a> tag simples para links externos */}
+              <a 
+                  href="https://wa.me/+558191873346" // Substitua pelo link de agendamento/WhatsApp
+                  target="_blank"                        // Opcional: abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
+                <Button>{t.bookConsultation}</Button>
+              </a>              
             </div>
           </div>
         </div>
@@ -69,16 +76,62 @@ export default function PsychologistLanding() {
               <p className="text-lg text-muted-foreground leading-relaxed">{t.heroDescription}</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <a 
+                  href="https://wa.me/+558191873346"
+                  target="_blank"                        //  abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
                 <Button size="lg" className="text-base">
                   <Calendar className="w-4 h-4 mr-2" />
                   {t.scheduleConsultation}
                 </Button>
+              </a>                
                 <Button variant="outline" size="lg" className="text-base bg-transparent">
                   {t.learnMore}
                 </Button>
               </div>
-            </div>
-
+              {/* NOVO BLOCO: BOTÕES DE REDES SOCIAIS E LINK-IN-BIO */}
+                <div className="flex items-center gap-4 pt-2">
+                    <span className="text-sm font-semibold text-foreground"></span>
+                    
+                    {/* Botão Instagram */}
+                    <a 
+                        href="https://www.instagram.com/claradescendente/" // COLOQUE SEU LINK DO INSTAGRAM
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone Instagram da Lucide. Ajuste se usar outro */}
+                        <Button variant="ghost" size="default" aria-label="Instagram">
+                            <Instagram className="w-10 h-10" />
+                        </Button>
+                    </a>
+                    
+                    {/* Botão WhatsApp (Chamada Direta) */}
+                    <a 
+                        href="https://wa.me/+558191873346" // Link Direto para WhatsApp
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone MessageCircle (para chat) da Lucide */}
+                        <Button variant="ghost" size="default" aria-label="WhatsApp">
+                            <MessageCircle className="w-10 h-10 text-green-500" />
+                        </Button>
+                    </a>
+                    
+                    {/* Botão Lnk.Bio (Link-in-Bio) */}
+                    <a 
+                        href="https://lnk.bio/claradescedente" // COLOQUE SEU LINK-IN-BIO
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {/* Usando o ícone Link ou ExternalLink (para link externo) da Lucide */}
+                        <Button variant="ghost" size="default" aria-label="Lnk.Bio">
+                            <Link className="w-10 h-10 text-accent" />
+                        </Button>
+                    </a>
+                </div>
+                {/* FIM DO NOVO BLOCO */}
+            </div>            
             <div className="relative">
               <div className="w-120 aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
                 <img
@@ -258,10 +311,16 @@ export default function PsychologistLanding() {
                   <p className="text-sm font-medium">{t.officeHours}</p>
                   <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
                 </div>
+                <a 
+                  href="https://wa.me/+558191873346" // Substitua pelo link de agendamento/WhatsApp
+                  target="_blank"                        // Opcional: abre em nova aba
+                  rel="noopener noreferrer"              // Prática de segurança
+              >
                 <Button className="w-full mt-6">
                   <Calendar className="w-4 h-4 mr-2" />
                   {t.bookAppointment}
                 </Button>
+              </a>                
               </div>
             </Card>
           </div>

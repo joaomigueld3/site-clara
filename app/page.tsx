@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, Instagram, MessageCircle, ExternalLink, HeartHandshake, Presentation, Menu, X } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, Instagram, MessageCircle, ExternalLink, HeartHandshake, Presentation, Menu, X, Github, Globe, Linkedin } from "lucide-react"
 import { LanguageSwitcher, type Language } from "@/components/language-switcher"
 import { RichText } from "@/components/rich-text"
 import { translations } from "@/lib/translations"
@@ -418,7 +418,9 @@ export default function PsychologistLanding() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>melo.clara@hotmail.com</span>
+                  <a href="mailto:consultorio.claradescendente@gmail.com" className="hover:text-primary transition-colors">
+                    consultorio.claradescendente@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
@@ -503,9 +505,29 @@ export default function PsychologistLanding() {
                 {t.drName}, {t.clinicalPsychologist}
               </span>
             </div>
-            <div className="text-xs sm:text-sm text-muted-foreground">
+            <div className="text-xs sm:text-sm text-muted-foreground md:text-right">
               <p>{t.licenseNumber}</p>
               <p className="mt-1">{t.copyright}</p>
+              <div className="mt-2 flex items-center justify-center md:justify-end gap-2">
+                <span>Developed by João Miguel Descendente</span>
+                <div className="flex gap-1">
+                  <a href="https://joaodescendente.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
+                      <Globe className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a href="https://github.com/joaomigueld3" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
+                      <Github className="h-4 w-4" />
+                    </Button>
+                  </a>
+                  <a href="https://www.linkedin.com/in/joaomigueld3/" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

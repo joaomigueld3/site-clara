@@ -92,7 +92,7 @@ export const translations = {
     consultationDesc:
       "Ofereço atendimento presencial em Recife e online para todo o Brasil. As consultas iniciais duram 50 minutos, incluem avaliação detalhada e definição conjunta dos próximos passos.",
     officeHours: "Horário de funcionamento:",
-    mondayThursday: "Segunda a Sexta: 10h às 22h",
+    mondayThursday: "Segunda a Sexta: 10h às 22h GMT-3",
     // friday: "Sexta: 9:00 - 15:00",
     bookAppointment: "Agendar Consulta",
 
@@ -188,7 +188,7 @@ export const translations = {
     consultationDesc:
         "I offer in-person and tele-counseling sessions to accommodate your needs. Initial consultations last 50 minutes and include a comprehensive assessment.",
     officeHours: "Office Hours:",
-    mondayThursday: "Monday - Friday: 10:00 AM - 10:00 PM",
+    mondayThursday: "Monday - Friday: 10:00 AM - 10:00 PM GMT-3",
     bookAppointment: "Book Appointment",
 
     // Footer
@@ -283,7 +283,7 @@ export const translations = {
     consultationDesc:
         "Ofrezco consultas presenciales y por teleasistencia para adaptarme a sus necesidades. Las consultas iniciales duran 50 minutos e incluyen una evaluación exhaustiva.",
     officeHours: "Horario de Atención:",
-    mondayThursday: "Lunes - Viernes: 10:00 AM - 10:00 PM",
+    mondayThursday: "Lunes - Viernes: 10:00 AM - 10:00 PM GMT-3",
     bookAppointment: "Reservar Cita",
 
     // Footer

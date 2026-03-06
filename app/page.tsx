@@ -4,8 +4,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, ArrowRight, Instagram, Link, MessageCircle } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, Instagram, MessageCircle, ExternalLink, HeartHandshake, Presentation } from "lucide-react"
 import { LanguageSwitcher, type Language } from "@/components/language-switcher"
+import { RichText } from "@/components/rich-text"
 import { translations } from "@/lib/translations"
 
 export default function PsychologistLanding() {
@@ -16,9 +17,9 @@ export default function PsychologistLanding() {
 
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen theme-watercolor text-foreground">
       {/* Navigation */}
-      <nav className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
+      <nav className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -73,7 +74,9 @@ export default function PsychologistLanding() {
                 <p className="text-xl text-muted-foreground leading-relaxed">{t.credentials}</p>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed">{t.heroDescription}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                <RichText>{t.heroDescription}</RichText>
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
@@ -90,47 +93,36 @@ export default function PsychologistLanding() {
                   {t.learnMore}
                 </Button>
               </div>
-              {/* NOVO BLOCO: BOTÕES DE REDES SOCIAIS E LINK-IN-BIO */}
-                <div className="flex items-center gap-4 pt-2">
-                    <span className="text-sm font-semibold text-foreground"></span>
-                    
-                    {/* Botão Instagram */}
-                    <a 
-                        href="https://www.instagram.com/claradescendente/" // COLOQUE SEU LINK DO INSTAGRAM
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        {/* Usando o ícone Instagram da Lucide. Ajuste se usar outro */}
-                        <Button variant="ghost" size="default" aria-label="Instagram">
-                            <Instagram className="w-10 h-10" />
-                        </Button>
-                    </a>
-                    
-                    {/* Botão WhatsApp (Chamada Direta) */}
-                    <a 
-                        href="https://wa.me/+558191873346" // Link Direto para WhatsApp
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        {/* Usando o ícone MessageCircle (para chat) da Lucide */}
-                        <Button variant="ghost" size="default" aria-label="WhatsApp">
-                            <MessageCircle className="w-10 h-10 text-green-500" />
-                        </Button>
-                    </a>
-                    
-                    {/* Botão Lnk.Bio (Link-in-Bio) */}
-                    <a 
-                        href="https://lnk.bio/claradescedente" // COLOQUE SEU LINK-IN-BIO
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        {/* Usando o ícone Link ou ExternalLink (para link externo) da Lucide */}
-                        <Button variant="ghost" size="default" aria-label="Lnk.Bio">
-                            <Link className="w-10 h-10 text-accent" />
-                        </Button>
-                    </a>
-                </div>
-                {/* FIM DO NOVO BLOCO */}
+              {/* Redes sociais */}
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href="https://www.instagram.com/claradescendente/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://wa.me/+558191873346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://lnk.bio/claradescedente"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                  aria-label="Link-in-bio"
+                >
+                  <ExternalLink className="h-6 w-6" />
+                </a>
+              </div>
             </div>            
             <div className="relative">
               <div className="w-120 aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
@@ -171,18 +163,20 @@ export default function PsychologistLanding() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance">{t.specializationTitle}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t.specializationSubtitle}
+              <RichText>{t.specializationSubtitle}</RichText>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Heart className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg">{t.eatingDisorders}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.eatingDisordersDesc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.eatingDisordersDesc}</RichText>
+                </p>
               </div>
             </Card>
 
@@ -192,7 +186,9 @@ export default function PsychologistLanding() {
                   <BookOpen className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="font-semibold text-lg">{t.cbt}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.cbtDesc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.cbtDesc}</RichText>
+                </p>
               </div>
             </Card>
 
@@ -202,7 +198,9 @@ export default function PsychologistLanding() {
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-lg">{t.act}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.actDesc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.actDesc}</RichText>
+                </p>
               </div>
             </Card>
 
@@ -212,7 +210,33 @@ export default function PsychologistLanding() {
                   <Award className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="font-semibold text-lg">{t.mindfulness}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.mindfulnessDesc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.mindfulnessDesc}</RichText>
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="space-y-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <HeartHandshake className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-lg">{t.workshopMaudsley}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.workshopMaudsleyDesc}</RichText>
+                </p>
+              </div>
+            </Card>
+
+            <Card className="p-6 hover:shadow-lg transition-shadow">
+              <div className="space-y-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                  <Presentation className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="font-semibold text-lg">{t.trainingSessions}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.trainingSessionsDesc}</RichText>
+                </p>
               </div>
             </Card>
           </div>
@@ -226,9 +250,16 @@ export default function PsychologistLanding() {
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold text-balance">{t.aboutTitle}</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>{t.aboutP1}</p>
-                <p>{t.aboutP2}</p>
-                <p>{t.aboutP3}</p>
+                <RichText as="p">{t.aboutIntro}</RichText>
+                <ul className="list-disc list-inside space-y-2 pl-1">
+                  <li>{t.aboutFormation1}</li>
+                  <li>{t.aboutFormation2}</li>
+                  <li>{t.aboutFormation3}</li>
+                  <li>{t.aboutFormation4}</li>
+                  <li>{t.aboutFormation5}</li>
+                </ul>
+                <RichText as="p">{t.aboutPosture}</RichText>
+                <RichText as="p">{t.aboutGoal}</RichText>
               </div>
             </div>
 
@@ -274,12 +305,40 @@ export default function PsychologistLanding() {
         </div>
       </section>
 
+      {/* Approach Section */}
+      <section id="approach" className="py-20 px-6">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-balance">{t.approachTitle}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              <RichText>{t.approachIntro}</RichText>
+            </p>
+          </div>
+
+          <Card className="p-8 space-y-4">
+            <ul className="space-y-3 text-muted-foreground leading-relaxed">
+              <li>• <RichText>{t.approachItem1}</RichText></li>
+              <li>• <RichText>{t.approachItem2}</RichText></li>
+              <li>• <RichText>{t.approachItem3}</RichText></li>
+              <li>• <RichText>{t.approachItem4}</RichText></li>
+              <li>• <RichText>{t.approachItem5}</RichText></li>
+            </ul>
+          </Card>
+
+          <p className="text-center text-muted-foreground leading-relaxed">
+            <RichText>{t.approachClosing}</RichText>
+          </p>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-balance">{t.contactTitle}</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">{t.contactSubtitle}</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              <RichText>{t.contactSubtitle}</RichText>
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -300,13 +359,47 @@ export default function PsychologistLanding() {
                     <p>Recife, Pernambuco</p>
                   </div>
                 </div>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-medium text-muted-foreground mb-3">{t.socialNetworks}</p>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href="https://www.instagram.com/claradescendente/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://wa.me/+558191873346"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+                      aria-label="WhatsApp"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://lnk.bio/claradescedente"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                      aria-label="Link-in-bio"
+                    >
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </Card>
 
             <Card className="p-8">
               <h3 className="font-semibold text-xl mb-6">{t.scheduleConsultationTitle}</h3>
               <div className="space-y-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">{t.consultationDesc}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  <RichText>{t.consultationDesc}</RichText>
+                </p>
                 <div className="space-y-2">
                   <p className="text-sm font-medium">{t.officeHours}</p>
                   <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>

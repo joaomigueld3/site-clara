@@ -9,61 +9,90 @@ export const translations = {
     contact: "Contato",
     bookConsultation: "Agendar Consulta",
 
-    // Hero Section
-    clinicalPsychologist: "Psicóloga Clínica",
+    // Hero Section (Home)
+    clinicalPsychologist: "Psicóloga Clínica • CRP 02/18166",
     drName: "Maria Clara M. Descendente",
-    credentials: "MSc Neuropsiquiatria • Professora • Palestrante",
+    credentials: "Mestrado em Neuropsiquiatria e Ciências do Comportamento (UFPE)",
     heroDescription:
-      "Ofereço cuidados psicológicos especializados com expertise em transtornos alimentares, terapia cognitivo-comportamental e intervenções baseadas em mindfulness. Minha abordagem combina tratamentos baseados em evidências com cuidado compassivo e personalizado.",
+      "Ofereço cuidados psicológicos especializados com expertise em **transtornos alimentares**, terapias cognitivo-comportamentais e intervenções baseadas em mindfulness. Minha abordagem combina tratamentos reconhecidos como padrão ouro com cuidado compassivo e personalizado.",
     scheduleConsultation: "Agendar Consulta",
     learnMore: "Saiba Mais",
     licensedPsychologist: "Psicóloga Clínica Licenciada",
     mscNeuropsychiatry: "MSc Neuropsiquiatria",
     professorSpeaker: "Professora e Palestrante",
-    acceptingPatients: "Aceitando novos pacientes • Atendimento online disponível",
+    acceptingPatients: "Aceitando novos pacientes • Atendimento online e presencial disponível",
 
-    // Specializations
-    specializationTitle: "Áreas de Especialização",
+    // Services
+    specializationTitle: "Serviços",
     specializationSubtitle:
-      "Abordagens terapêuticas baseadas em evidências adaptadas às suas necessidades e objetivos únicos",
-    eatingDisorders: "Transtornos Alimentares",
+      "Atendimentos personalizados, baseados em evidências, para transtornos alimentares e outras demandas em saúde mental.",
+    eatingDisorders: "Psicoterapia especializada para transtornos alimentares",
     eatingDisordersDesc:
-      "Tratamento especializado para anorexia, bulimia, transtorno da compulsão alimentar e outras preocupações relacionadas à alimentação",
-    cbt: "Terapia Cognitivo-Comportamental",
-    cbtDesc: "Técnicas de TCC baseadas em evidências para abordar ansiedade, depressão e padrões de pensamento",
-    act: "Terapia de Aceitação e Compromisso",
-    actDesc: "Abordagens de ACT focando na flexibilidade psicológica e vida baseada em valores",
-    mindfulness: "Treinamento em Mindfulness",
-    mindfulnessDesc: "Práticas de meditação e mindfulness para redução do estresse e regulação emocional",
+      "Tratamento dedicado a anorexia, bulimia, compulsão alimentar, TARE/ARFID e outras formas de relação difícil com comida, corpo e imagem, usando protocolos internacionais de padrão ouro adaptados à sua singularidade.",
+    cbt: "Psicoterapia para outras demandas",
+    cbtDesc:
+      "Atendimento para ansiedade, depressão, transtorno obsessivo-compulsivo (TOC), compulsões comportamentais, ansiedade social, problemas de relacionamento e outras questões emocionais.",
+    act: "Orientação parental e cuidado à família",
+    actDesc:
+      "Apoio para pais ou familiares que desejam compreender melhor a dinâmica emocional dos filhos/adolescentes e promover um ambiente de crescimento saudável. Inclusivo para famílias de pessoas com transtornos alimentares.",
+    mindfulness: "Treinamento de Mindfulness",
+    mindfulnessDesc:
+      "Programas estruturados de 8 semanas ou personalizados, voltados a reduzir estresse, regular emoções, cultivar presença e autocompaixão. Pode funcionar como parte integrada do tratamento.",
+    workshopMaudsley: "Workshop \"Novo Modelo Maudsley\" para cuidadores",
+    workshopMaudsleyDesc:
+      "Workshops voltados para responsáveis de pessoas com transtornos alimentares, com foco em comunicação, suporte, redução de conflitos e colaboração com o tratamento.",
+    trainingSessions: "Aulas, palestras e formação",
+    trainingSessionsDesc:
+      "Capacitações voltadas para profissionais, instituições e empresas nas áreas de transtornos alimentares, psicologia baseada em evidências, neurociência aplicada, mindfulness, TCC, ACT e DBT.",
 
     // About Section
     aboutTitle: "Sobre a Clara",
-    aboutP1:
-      "Com mais de 10 anos de experiência em psicologia clínica, me especializo em fornecer cuidados compassivos e baseados em evidências para indivíduos que lutam contra transtornos alimentares e preocupações relacionadas à saúde mental.",
-    aboutP2:
-      "Minha abordagem integra terapia cognitivo-comportamental, terapia de aceitação e compromisso, e intervenções baseadas em mindfulness para ajudar os clientes a desenvolver relacionamentos mais saudáveis com a comida, imagem corporal e consigo mesmos.",
-    aboutP3:
-      "Como professora e palestrante frequente em conferências profissionais, permaneço comprometida em avançar o campo através de pesquisa, educação e excelência clínica.",
+    aboutIntro:
+      "Como psicóloga clínica, dedico meu trabalho a oferecer atendimentos acolhedores, embasados cientificamente e personalizados às necessidades de cada pessoa. Minha formação inclui:",
+    aboutFormation1: "Instrutora de Mindfulness (UK College of Mindfulness Meditation – Mindfulness Now)",
+    aboutFormation2: "Especialização em Terapia Cognitivo-Comportamental (FAFIRE)",
+    aboutFormation3: "Especialização em Neurociência Aplicada (UFPE)",
+    aboutFormation4:
+      "Treinamentos avançados em protocolos para transtornos alimentares: ACT para TEA (Duke University), DBT para TEA (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Protocolo Massachusetts para TARE/ARFID (CEBRATA) e Novo Modelo Maudsley para pais e cuidadores (NHS Maudsley)",
+    aboutFormation5: "Mestrado em Neuropsiquiatria e Ciências do Comportamento (UFPE)",
+    aboutPosture:
+      "Minha postura profissional alia uma atitude atenciosa, empática e flexível com a estrutura e o rigor necessários para garantir **resultados eficazes**. Acredito em criar um ambiente seguro, livre de julgamentos, para que o tratamento seja ao mesmo tempo humano e eficaz.",
+    aboutGoal:
+      "Ao longo do processo, meu objetivo é que você se sinta mais em paz, conectado aos seus valores, vivendo uma vida que valha a pena ser vivida e conquistando mais autonomia.",
     educationCredentials: "Educação e Credenciais",
     universityEdinburgh: "Universidade Federal de Pernambuco",
     stateBoardCertified: "Conselho Regional de Psicologia de Pernambuco (CRP 02/18166)",
     eatingDisordersSpecialist: "Especialista em Transtornos Alimentares",
     iaedpCertified: "Certificada USP e CEBRATA",
-    professionalRoles: "Funções Profissionais",
-    professorClinical: "• Professora de Psicologia Clínica e Neuropsicologia",
-    conferenceSpeaker: "• Palestrante em universidades e na mídia nacional",
-    researchContributor: "• Contribuidora de Pesquisa em Neurociência",
-    clinicalSupervisor: "• Professora de Mindfulness Now (UK College of Mindfulness Meditation)",
+    professionalRoles: "Funções Profissionais e Atuação",
+    professorClinical: "• Instrutora de Mindfulness (Mindfulness Now – UK College of Mindfulness Meditation)",
+    conferenceSpeaker: "• Professora, palestrante e facilitadora de workshops em transtornos alimentares e terapias contextuais",
+    researchContributor: "• Atuação com foco em psicologia baseada em evidências e neurociência aplicada",
+    clinicalSupervisor: "• Atuação em formação e capacitação de profissionais de saúde mental",
+
+    // Approach Section
+    approachTitle: "Abordagem",
+    approachIntro:
+      "Trabalho com base em evidências científicas, integrando neurociência, terapias comportamentais e abordagens contextuais para oferecer um cuidado ético, humano e eficaz.",
+    approachItem1: "Ambiente acolhedor, seguro e livre de julgamentos.",
+    approachItem2: "Adaptação de protocolos de **padrão ouro** às suas necessidades e contexto de vida.",
+    approachItem3: "Estrutura, clareza e acompanhamento consistente ao longo do tratamento.",
+    approachItem4: "Colaboração com equipe multidisciplinar, quando necessário.",
+    approachItem5: "Promoção de autonomia, autocompaixão e conexão com seus valores pessoais.",
+    approachClosing:
+      "Você não estará sozinho(a) nessa jornada. Juntos, construímos um caminho de transformação que respeite seu ritmo e promova uma vida mais alinhada e significativa.",
 
     // Contact Section
-    contactTitle: "Entre em Contato",
-    contactSubtitle: "Pronta para começar sua jornada em direção à melhora e crescimento? Estou aqui para ajudar.",
+    contactTitle: "Contato",
+    contactSubtitle:
+      "Pronto(a) para começar sua jornada em direção à melhora e crescimento? Estou aqui para ajudar.",
     contactInfo: "Informações de Contato",
+    socialNetworks: "Redes sociais",
     scheduleConsultationTitle: "Agendar Consulta",
     consultationDesc:
-      "Ofereço consultas presenciais e por teleatendimento para acomodar suas necessidades. As consultas iniciais duram 50 minutos e incluem uma avaliação abrangente.",
-    officeHours: "Horário de Atendimento:",
-    mondayThursday: "Segunda - Sexta: 10:00 - 22:00",
+      "Ofereço atendimento presencial em Recife e online para todo o Brasil. As consultas iniciais duram 50 minutos, incluem avaliação detalhada e definição conjunta dos próximos passos.",
+    officeHours: "Horário de funcionamento:",
+    mondayThursday: "Segunda a Sexta: 10h às 22h",
     // friday: "Sexta: 9:00 - 15:00",
     bookAppointment: "Agendar Consulta",
 
@@ -104,16 +133,29 @@ export const translations = {
     act: "Acceptance and Commitment Therapy (ACT)",
     actDesc: "ACT approaches focusing on psychological flexibility and value-based living",
     mindfulness: "Mindfulness Training",
-    mindfulnessDesc: "Meditation and mindfulness practices for stress reduction and emotional regulation",
+    mindfulnessDesc:
+      "Structured 8-week or customized programs aimed at reducing stress, regulating emotions, cultivating presence and self-compassion. Can work as an integrated part of treatment.",
+    workshopMaudsley: "Workshop \"New Maudsley Model\" for caregivers",
+    workshopMaudsleyDesc:
+      "Workshops for caregivers of people with eating disorders, focusing on communication, support, conflict reduction, and collaboration with treatment.",
+    trainingSessions: "Classes, talks and training",
+    trainingSessionsDesc:
+      "Training for professionals, institutions and companies in eating disorders, evidence-based psychology, applied neuroscience, mindfulness, CBT, ACT and DBT.",
 
     // About Section
     aboutTitle: "About Clara",
-    aboutP1:
-        "With over 10 years of experience in clinical psychology, I specialize in providing compassionate, evidence-based care for individuals struggling with eating disorders and related mental health concerns.",
-    aboutP2:
-        "My approach integrates cognitive-behavioral therapy, acceptance and commitment therapy, and mindfulness-based interventions to help clients develop healthier relationships with food, body image, and themselves.",
-    aboutP3:
-        "As a frequent professor and speaker at professional conferences, I remain committed to advancing the field through research, education, and clinical excellence.",
+    aboutIntro:
+        "As a clinical psychologist, I dedicate my work to offering welcoming, scientifically grounded, and personalized care tailored to each person's needs. My training includes:",
+    aboutFormation1: "Mindfulness Instructor (UK College of Mindfulness Meditation – Mindfulness Now)",
+    aboutFormation2: "Specialization in Cognitive-Behavioral Therapy (FAFIRE)",
+    aboutFormation3: "Specialization in Applied Neuroscience (UFPE)",
+    aboutFormation4:
+        "Advanced training in eating disorder protocols: ACT for ED (Duke University), DBT for ED (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Massachusetts Protocol for TARE/ARFID (CEBRATA), and New Maudsley Model for parents and caregivers (NHS Maudsley)",
+    aboutFormation5: "Master's in Neuropsychiatry and Behavioral Sciences (UFPE)",
+    aboutPosture:
+        "My professional stance combines an attentive, empathetic, and flexible attitude with the structure and rigor needed to ensure **effective results**. I believe in creating a safe, non-judgmental environment so that treatment is both human and effective.",
+    aboutGoal:
+        "Throughout the process, my goal is for you to feel more at peace, connected to your values, living a life worth living, and gaining greater autonomy.",
     educationCredentials: "Education and Credentials",
     universityEdinburgh: "Federal University of Pernambuco",
     stateBoardCertified: "Regional Council of Psychology of Pernambuco (CRP 02/18166)",
@@ -125,10 +167,23 @@ export const translations = {
     researchContributor: "• Research Contributor in Neuroscience",
     clinicalSupervisor: "• Mindfulness Now Teacher (UK College of Mindfulness Meditation)",
 
+    // Approach Section
+    approachTitle: "Approach",
+    approachIntro:
+        "I work with an evidence-based perspective, integrating neuroscience, behavioral therapies, and contextual approaches to offer ethical, human, and effective care.",
+    approachItem1: "A welcoming, non-judgmental, and safe environment.",
+    approachItem2: "Adaptation of gold-standard protocols to your needs and life context.",
+    approachItem3: "Structure, clarity, and consistent follow-up throughout treatment.",
+    approachItem4: "Collaboration with a multidisciplinary team when necessary.",
+    approachItem5: "Promotion of autonomy, self-compassion, and connection with your personal values.",
+    approachClosing:
+        "You will not be alone on this journey. Together, we build a path of transformation that respects your pace and supports a more aligned and meaningful life.",
+
     // Contact Section
-    contactTitle: "Get in Touch",
+    contactTitle: "Contact",
     contactSubtitle: "Ready to start your journey towards improvement and growth? I'm here to help.",
     contactInfo: "Contact Information",
+    socialNetworks: "Social networks",
     scheduleConsultationTitle: "Schedule Consultation",
     consultationDesc:
         "I offer in-person and tele-counseling sessions to accommodate your needs. Initial consultations last 50 minutes and include a comprehensive assessment.",
@@ -173,16 +228,29 @@ export const translations = {
     act: "Terapia de Aceptación y Compromiso (ACT)",
     actDesc: "Enfoques de ACT centrándose en la flexibilidad psicológica y la vida basada en valores",
     mindfulness: "Entrenamiento en Mindfulness",
-    mindfulnessDesc: "Prácticas de meditación y mindfulness para la reducción del estrés y la regulación emocional",
+    mindfulnessDesc:
+      "Programas estructurados de 8 semanas o personalizados, orientados a reducir el estrés, regular las emociones, cultivar la presencia y la autocompasión. Puede funcionar como parte integrada del tratamiento.",
+    workshopMaudsley: "Taller \"Modelo Maudsley\" para cuidadores",
+    workshopMaudsleyDesc:
+      "Talleres dirigidos a responsables de personas con trastornos alimentarios, con foco en comunicación, apoyo, reducción de conflictos y colaboración con el tratamiento.",
+    trainingSessions: "Clases, charlas y formación",
+    trainingSessionsDesc:
+      "Capacitaciones para profesionales, instituciones y empresas en trastornos alimentarios, psicología basada en evidencia, neurociencia aplicada, mindfulness, TCC, ACT y DBT.",
 
     // About Section
     aboutTitle: "Acerca de Clara",
-    aboutP1:
-        "Con más de 10 años de experiencia en psicología clínica, me especializo en proporcionar atención compasiva y basada en evidencia para personas que luchan contra trastornos alimentarios y preocupaciones de salud mental relacionadas.",
-    aboutP2:
-        "Mi enfoque integra la terapia cognitivo-conductual, la terapia de aceptación y compromiso, y las intervenciones basadas en mindfulness para ayudar a los clientes a desarrollar relaciones más saludables con la comida, la imagen corporal y consigo mismos.",
-    aboutP3:
-        "Como profesora y ponente frecuente en conferencias profesionales, mantengo mi compromiso de avanzar en el campo a través de la investigación, la educación y la excelencia clínica.",
+    aboutIntro:
+        "Como psicóloga clínica, dedico mi trabajo a ofrecer una atención acogedora, con base científica y personalizada a las necesidades de cada persona. Mi formación incluye:",
+    aboutFormation1: "Instructora de Mindfulness (UK College of Mindfulness Meditation – Mindfulness Now)",
+    aboutFormation2: "Especialización en Terapia Cognitivo-Conductual (FAFIRE)",
+    aboutFormation3: "Especialización en Neurociencia Aplicada (UFPE)",
+    aboutFormation4:
+        "Entrenamientos avanzados en protocolos para trastornos alimentarios: ACT para TCA (Duke University), DBT para TCA (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Protocolo Massachusetts para TARE/ARFID (CEBRATA) y Modelo Maudsley para padres y cuidadores (NHS Maudsley)",
+    aboutFormation5: "Máster en Neuropsiquiatría y Ciencias del Comportamiento (UFPE)",
+    aboutPosture:
+        "Mi postura profesional combina una actitud atenta, empática y flexible con la estructura y el rigor necesarios para garantizar **resultados eficaces**. Creo en crear un ambiente seguro, libre de juicios, para que el tratamiento sea a la vez humano y eficaz.",
+    aboutGoal:
+        "A lo largo del proceso, mi objetivo es que te sientas más en paz, conectado/a a tus valores, viviendo una vida que valga la pena ser vivida y conquistando más autonomía.",
     educationCredentials: "Educación y Credenciales",
     universityEdinburgh: "Universidad Federal de Pernambuco",
     stateBoardCertified: "Consejo Regional de Psicología de Pernambuco (CRP 02/18166)",
@@ -194,10 +262,23 @@ export const translations = {
     researchContributor: "• Contribuidora de Investigación en Neurociencia",
     clinicalSupervisor: "• Profesora de Mindfulness Now (UK College of Mindfulness Meditation)",
 
+    // Approach Section
+    approachTitle: "Enfoque",
+    approachIntro:
+        "Trabajo desde una base de evidencia científica, integrando neurociencia, terapias conductuales y enfoques contextuales para ofrecer una atención ética, humana y eficaz.",
+    approachItem1: "Un ambiente acogedor, seguro y libre de juicios.",
+    approachItem2: "Adaptación de protocolos de estándar de oro a sus necesidades y contexto de vida.",
+    approachItem3: "Estructura, claridad y seguimiento constante a lo largo del tratamiento.",
+    approachItem4: "Colaboración con un equipo multidisciplinario, cuando sea necesario.",
+    approachItem5: "Promoción de autonomía, autocompasión y conexión con sus valores personales.",
+    approachClosing:
+        "No estará solo(a) en este camino. Juntos construimos una ruta de transformación que respete su ritmo y promueva una vida más alineada y significativa.",
+
     // Contact Section
-    contactTitle: "Póngase en Contacto",
+    contactTitle: "Contacto",
     contactSubtitle: "¿Lista/o para comenzar su viaje hacia la mejora y el crecimiento? Estoy aquí para ayudar.",
     contactInfo: "Información de Contacto",
+    socialNetworks: "Redes sociales",
     scheduleConsultationTitle: "Agendar Consulta",
     consultationDesc:
         "Ofrezco consultas presenciales y por teleasistencia para adaptarme a sus necesidades. Las consultas iniciales duran 50 minutos e incluyen una evaluación exhaustiva.",

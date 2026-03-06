@@ -1,62 +1,57 @@
-/* globals.css */
+/* globals.css – Tema inspirado em clara-tema.jpeg (aquarela, creme, verde folha, pêssego) */
 
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/* O bloco @custom-variant dark (&:is(.dark *)); foi removido, assim como todo o bloco .dark {} */
-
 :root {
-  /* 1. Cores Base (Fundo e Texto - Tema Claro/Pastel) */
-  --background: oklch(0.97 0.03 135); /* Fundo: Verde Pastel bem claro (L: 0.97, C: 0.03, H: 135) */
-  --foreground: oklch(0.25 0.05 150); /* Foreground: Verde Escuro/Musgo para o corpo do texto */
+  /* Fundo central creme/bege (como no cartão) */
+  --background: oklch(0.98 0.015 95);
+  --foreground: oklch(0.28 0.02 260);
 
-  --card: oklch(1 0 0);
+  --card: oklch(1 0.008 95);
   --card-foreground: var(--foreground);
 
-  /* 2. Cores Primárias e Secundárias (Destaques Verdes) */
-  --primary: oklch(0.60 0.10 145);     /* Verde do círculo da Logo/Botões */
-  --primary-foreground: oklch(1 0 0);   /* Texto branco */
+  /* Verde folha (logo e botões) */
+  --primary: oklch(0.52 0.14 145);
+  --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.85 0.05 130);   /* Verde mais suave */
+  /* Verde menta / água-marinha (manchas aquarela) */
+  --secondary: oklch(0.88 0.06 175);
   --secondary-foreground: var(--foreground);
 
-  /* 3. Cores de Accent (Roxo dos Títulos) */
-  --accent: oklch(0.40 0.15 320);     /* Roxo profundo/lavanda para títulos (Ex: "Formulação de Casos") */
-  --accent-foreground: oklch(1 0 0);   /* Texto branco */
+  /* Pêssego/coral suave (manchas aquarela) */
+  --accent: oklch(0.82 0.08 55);
+  --accent-foreground: oklch(0.28 0.04 50);
 
-  --muted: oklch(0.90 0.03 130);       /* Neutro Verde/Cinza Claro */
-  --muted-foreground: oklch(0.55 0.05 140);
-  
-  --border: oklch(0.85 0.03 125);
-  --input: oklch(0.85 0.03 125);
-  --ring: var(--primary); 
+  --muted: oklch(0.94 0.02 120);
+  --muted-foreground: oklch(0.48 0.03 150);
 
-  /* O restante das variáveis de cores genéricas ou de chart foram mantidas, ajustadas ao tema claro */
-  --popover: oklch(1 0 0);
+  --border: oklch(0.88 0.02 115);
+  --input: oklch(0.90 0.02 115);
+  --ring: var(--primary);
+
+  --popover: oklch(1 0.008 95);
   --popover-foreground: var(--foreground);
 
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  
-  /* Variáveis de Sidebar também foram mantidas em tons claros, já que não há modo escuro */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
 
-/* O BLOCO .dark FOI REMOVIDO COMPLETAMENTE */
+  --chart-1: oklch(0.52 0.14 145);
+  --chart-2: oklch(0.75 0.10 175);
+  --chart-3: oklch(0.82 0.08 55);
+  --chart-4: oklch(0.65 0.12 145);
+  --chart-5: oklch(0.70 0.08 65);
+  --radius: 0.625rem;
+
+  --sidebar: oklch(0.985 0.01 95);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.94 0.02 95);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
 
 
 @theme inline {
@@ -105,7 +100,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    /* Garante que o fundo e o texto usem as novas variáveis pastel */
     @apply bg-background text-foreground;
+  }
+}
+
+/* Fundo aquarelado do tema (bordas com manchas verde menta e pêssego) – aplicar no container principal */
+@layer components {
+  .theme-watercolor {
+    background:
+      radial-gradient(ellipse 90% 60% at 0% 0%, rgba(173, 212, 196, 0.6), transparent 55%),
+      radial-gradient(ellipse 85% 55% at 100% 0%, rgba(244, 183, 161, 0.55), transparent 55%),
+      radial-gradient(ellipse 85% 60% at 0% 100%, rgba(244, 183, 161, 0.55), transparent 55%),
+      radial-gradient(ellipse 90% 55% at 100% 100%, rgba(173, 212, 196, 0.6), transparent 55%),
+      var(--background);
+    min-height: 100vh;
   }
 }

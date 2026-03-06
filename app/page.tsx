@@ -418,12 +418,12 @@ export default function PsychologistLanding() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span>clara@example.com</span>
+                  <span>melo.clara@hotmail.com</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p>Recife, Pernambuco</p>
+                    <p>Boa Viagem, Recife, Pernambuco</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-border">

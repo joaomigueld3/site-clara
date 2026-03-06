@@ -102,6 +102,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Melhor toque em mobile: área de toque e menos delay */
+  @media (hover: none) and (pointer: coarse) {
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
 }
 
 /* Fundo aquarelado do tema (bordas com manchas verde menta e pêssego) – aplicar no container principal */

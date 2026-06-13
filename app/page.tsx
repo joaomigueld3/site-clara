@@ -1,69 +1,115 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Calendar, Award, BookOpen, Users, Heart, Instagram, MessageCircle, ExternalLink, HeartHandshake, Presentation, Menu, X, Github, Globe, Linkedin } from "lucide-react"
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Users,
+  Heart,
+  Instagram,
+  MessageCircle,
+  ExternalLink,
+  HeartHandshake,
+  Menu,
+  X,
+  Github,
+  Globe,
+  Linkedin,
+  Utensils,
+  Leaf,
+  Wind,
+  Moon,
+  Brain,
+  Quote,
+  ArrowRight,
+  GraduationCap,
+  Monitor,
+  Home,
+  Clock,
+  Sparkles,
+} from "lucide-react"
 import { LanguageSwitcher, type Language } from "@/components/language-switcher"
-import { RichText } from "@/components/rich-text"
+import { Reveal } from "@/components/reveal"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { ScrollProgress } from "@/components/scroll-progress"
 import { translations } from "@/lib/translations"
+
+const WHATSAPP = "https://wa.me/+558191873346"
+const EMAIL = "consultorio.claradescendente@gmail.com"
+const INSTAGRAM = "https://www.instagram.com/claradescendente/"
+const LINKBIO = "https://lnk.bio/claradescedente"
 
 export default function PsychologistLanding() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>("pt")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const t = translations[currentLanguage]
-  const profilePicture = '/clara-profile-picture.jpg'
-  const logoPicture = '/clara-logo.jpg'
+  const logoPicture = "/clara-logo.jpg"
 
   const closeMobileMenu = () => setMobileMenuOpen(false)
 
+  const complementaryServices = [
+    { icon: Leaf, title: t.mindfulnessTitle, desc: t.mindfulnessDesc },
+    { icon: Wind, title: t.anxietyTitle, desc: t.anxietyDesc },
+    { icon: Moon, title: t.depressionTitle, desc: t.depressionDesc },
+    { icon: Brain, title: t.adhdTitle, desc: t.adhdDesc },
+    { icon: Users, title: t.relationshipsTitle, desc: t.relationshipsDesc },
+  ]
+
+  const steps = [
+    { title: t.step1Title, desc: t.step1Desc, meta: t.step1Meta },
+    { title: t.step2Title, desc: t.step2Desc, meta: t.step2Meta },
+    { title: t.step3Title, desc: t.step3Desc, meta: t.step3Meta },
+    { title: t.step4Title, desc: t.step4Desc, meta: t.step4Meta },
+  ]
+
+  const seals = ["UFPE", "Duke University", "University of Sydney", "CEBRATA", "CBT Ohio"]
+
   return (
-    <div className="min-h-screen theme-watercolor text-foreground overflow-x-hidden">
-      {/* Navigation */}
-      <nav className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between gap-2">
-            <a href="#" onClick={closeMobileMenu} className="flex items-center space-x-2 min-w-0">
-              <div className="w-12 h-12 sm:w-15 sm:h-15 rounded-full overflow-hidden bg-primary flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={logoPicture}
-                  alt="Logo Maria Clara M. Descendente"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <span className="font-semibold text-base sm:text-lg truncate">{t.drName}</span>
+    <div className="theme-watercolor min-h-screen text-foreground overflow-x-hidden">
+      <ScrollProgress />
+      {/* ---------- Navegação ---------- */}
+      <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex items-center justify-between gap-2 py-3">
+            <a href="#top" onClick={closeMobileMenu} className="flex min-w-0 items-center gap-2.5">
+              <span className="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-primary/10 ring-1 ring-border">
+                <img src={logoPicture} alt="Logo Maria Clara Descendente" className="h-full w-full object-cover" />
+              </span>
+              <span className="truncate font-serif text-lg font-semibold tracking-tight">{t.drName}</span>
             </a>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+
+            <div className="hidden items-center gap-7 md:flex">
+              <a href="#about" className="nav-link">
                 {t.about}
               </a>
-              <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#services" className="nav-link">
                 {t.services}
               </a>
-              <a href="#approach" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#approach" className="nav-link">
                 {t.approach}
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#contact" className="nav-link">
                 {t.contact}
               </a>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+
+            <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
               <div className="hidden md:block">
                 <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
               </div>
-              <a
-                href="https://wa.me/+558191873346"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-block"
-              >
-                <Button>{t.bookConsultation}</Button>
+              <ThemeToggle className="hidden md:inline-flex" />
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden md:inline-block">
+                <Button className="btn-shine rounded-full">{t.bookConsultation}</Button>
               </a>
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden h-10 w-10"
+                className="h-10 w-10 md:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
               >
@@ -73,50 +119,32 @@ export default function PsychologistLanding() {
           </div>
         </div>
 
-        {/* Mobile menu (expande abaixo da nav) */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-card/95 backdrop-blur-sm">
-            <div className="flex flex-col px-4 py-4 gap-0">
-              <a
-                href="#about"
-                onClick={closeMobileMenu}
-                className="py-3 px-3 text-base text-muted-foreground hover:text-foreground transition-colors rounded-lg active:bg-muted/50 min-h-[44px] flex items-center"
-              >
-                {t.about}
-              </a>
-              <a
-                href="#services"
-                onClick={closeMobileMenu}
-                className="py-3 px-3 text-base text-muted-foreground hover:text-foreground transition-colors rounded-lg active:bg-muted/50 min-h-[44px] flex items-center"
-              >
-                {t.services}
-              </a>
-              <a
-                href="#approach"
-                onClick={closeMobileMenu}
-                className="py-3 px-3 text-base text-muted-foreground hover:text-foreground transition-colors rounded-lg active:bg-muted/50 min-h-[44px] flex items-center"
-              >
-                {t.approach}
-              </a>
-              <a
-                href="#contact"
-                onClick={closeMobileMenu}
-                className="py-3 px-3 text-base text-muted-foreground hover:text-foreground transition-colors rounded-lg active:bg-muted/50 min-h-[44px] flex items-center"
-              >
-                {t.contact}
-              </a>
-              <div className="pt-4 mt-2 border-t border-border flex flex-col gap-3">
-                <div className="px-1">
-                  <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
-                </div>
+          <div className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
+            <div className="flex flex-col gap-0 px-4 py-4">
+              {[
+                { href: "#about", label: t.about },
+                { href: "#services", label: t.services },
+                { href: "#approach", label: t.approach },
+                { href: "#contact", label: t.contact },
+              ].map((item) => (
                 <a
-                  href="https://wa.me/+558191873346"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  key={item.href}
+                  href={item.href}
                   onClick={closeMobileMenu}
+                  className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-base text-muted-foreground transition-colors hover:text-foreground active:bg-muted/50"
                 >
-                  <Button className="w-full min-h-11" size="lg">
-                    <Calendar className="w-4 h-4 mr-2 shrink-0" />
+                  {item.label}
+                </a>
+              ))}
+              <div className="mt-2 flex flex-col gap-3 border-t border-border pt-4">
+                <div className="flex items-center justify-between gap-2 px-1">
+                  <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
+                  <ThemeToggle />
+                </div>
+                <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
+                  <Button className="min-h-11 w-full rounded-full" size="lg">
+                    <Calendar className="mr-2 h-4 w-4 shrink-0" />
                     {t.bookConsultation}
                   </Button>
                 </a>
@@ -126,412 +154,517 @@ export default function PsychologistLanding() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="space-y-3 sm:space-y-4">
-                <Badge variant="secondary" className="w-fit text-xs sm:text-sm">
-                  {t.clinicalPsychologist}
-                </Badge>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-balance">{t.drName}</h1>
-                <p className="text-base sm:text-xl text-muted-foreground leading-relaxed">{t.credentials}</p>
-              </div>
+      {/* ---------- Hero ---------- */}
+      <section id="top" className="relative px-4 pt-10 pb-12 sm:px-6 sm:pt-16 lg:pt-24 lg:pb-20">
+        {/* manchas orgânicas */}
+        <div
+          aria-hidden
+          className="animate-float-slower pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="animate-float-slow pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-accent/15 blur-3xl"
+        />
 
-              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                <RichText>{t.heroDescription}</RichText>
-              </p>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          <div className="animate-fade-in-up space-y-7">
+            <span className="eyebrow">
+              <Sparkles className="h-3.5 w-3.5" />
+              {t.heroBadge}
+            </span>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a 
-                  href="https://wa.me/+558191873346"
-                  target="_blank"                        //  abre em nova aba
-                  rel="noopener noreferrer"              // Prática de segurança
-              >
-                <Button size="lg" className="text-base">
-                  <Calendar className="w-4 h-4 mr-2" />
+            <h1 className="text-display text-balance text-4xl sm:text-5xl lg:text-[3.4rem]">
+              {t.heroHeadline}
+            </h1>
+
+            <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {t.heroSubtitle}
+            </p>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="btn-shine group min-h-12 w-full rounded-full px-7 text-base sm:w-auto">
+                  <Calendar className="mr-2 h-4 w-4" />
                   {t.scheduleConsultation}
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-              </a>                
-                <a href="#about" className="inline-block">
-                  <Button variant="outline" size="lg" className="text-base bg-transparent w-full sm:w-auto min-h-11">
-                    {t.learnMore}
-                  </Button>
-                </a>
-              </div>
-              {/* Redes sociais */}
-              <div className="flex items-center gap-3 pt-2">
-                <a
-                  href="https://www.instagram.com/claradescendente/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                  aria-label="Instagram"
+              </a>
+              <a href="#about" className="inline-block">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="min-h-12 w-full rounded-full border-primary/30 bg-transparent px-7 text-base sm:w-auto"
                 >
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://wa.me/+558191873346"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://lnk.bio/claradescedente"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-                  aria-label="Link-in-bio"
-                >
-                  <ExternalLink className="h-6 w-6" />
-                </a>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none lg:w-120 aspect-[4/5] rounded-2xl overflow-hidden bg-muted/20 mb-6">
-                <img
-                  src={profilePicture}
-                  alt="Maria Clara M. Descendente - Psicóloga Clínica"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <Card className="p-4 sm:p-6 bg-card border-border">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Award className="w-5 h-5 text-primary" />
-                    <span className="font-medium">{t.licensedPsychologist}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <BookOpen className="w-5 h-5 text-primary" />
-                    <span className="font-medium">{t.mscNeuropsychiatry}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="w-5 h-5 text-primary" />
-                    <span className="font-medium">{t.professorSpeaker}</span>
-                  </div>
-                  <div className="pt-4 border-t border-border">
-                    <p className="text-sm text-muted-foreground">{t.acceptingPatients}</p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specializations */}
-      <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-3 sm:space-y-4 mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">{t.specializationTitle}</h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-0">
-              <RichText>{t.specializationSubtitle}</RichText>
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.eatingDisorders}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.eatingDisordersDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.cbt}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.cbtDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.act}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.actDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.mindfulness}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.mindfulnessDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <HeartHandshake className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.workshopMaudsley}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.workshopMaudsleyDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-
-            <Card className="p-4 sm:p-6 hover:shadow-lg transition-shadow">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Presentation className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
-                </div>
-                <h3 className="font-semibold text-base sm:text-lg">{t.trainingSessions}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.trainingSessionsDesc}</RichText>
-                </p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">{t.aboutTitle}</h2>
-              <div className="space-y-3 sm:space-y-4 text-muted-foreground leading-relaxed text-sm sm:text-base">
-                <RichText as="p">{t.aboutIntro}</RichText>
-                <ul className="list-disc list-inside space-y-2 pl-1">
-                  <li>{t.aboutFormation1}</li>
-                  <li>{t.aboutFormation2}</li>
-                  <li>{t.aboutFormation3}</li>
-                  <li>{t.aboutFormation4}</li>
-                  <li>{t.aboutFormation5}</li>
-                </ul>
-                <RichText as="p">{t.aboutPosture}</RichText>
-                <RichText as="p">{t.aboutGoal}</RichText>
-              </div>
-            </div>
-
-            <div className="space-y-4 sm:space-y-6">
-              <Card className="p-4 sm:p-6">
-                <h3 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">{t.educationCredentials}</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-medium">{t.mscNeuropsychiatry}</p>
-                      <p className="text-sm text-muted-foreground">{t.universityEdinburgh}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-medium">{t.licensedPsychologist}</p>
-                      <p className="text-sm text-muted-foreground">{t.stateBoardCertified}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <p className="font-medium">{t.eatingDisordersSpecialist}</p>
-                      <p className="text-sm text-muted-foreground">{t.iaedpCertified}</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-4 sm:p-6">
-                <h3 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">{t.professionalRoles}</h3>
-                <div className="space-y-2">
-                  <p className="text-sm">{t.professorClinical}</p>
-                  <p className="text-sm">{t.conferenceSpeaker}</p>
-                  <p className="text-sm">{t.researchContributor}</p>
-                  <p className="text-sm">{t.clinicalSupervisor}</p>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Approach Section */}
-      <section id="approach" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
-          <div className="text-center space-y-3 sm:space-y-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">{t.approachTitle}</h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              <RichText>{t.approachIntro}</RichText>
-            </p>
-          </div>
-
-          <Card className="p-5 sm:p-8 space-y-3 sm:space-y-4">
-            <ul className="space-y-2 sm:space-y-3 text-muted-foreground leading-relaxed text-sm sm:text-base">
-              <li>• <RichText>{t.approachItem1}</RichText></li>
-              <li>• <RichText>{t.approachItem2}</RichText></li>
-              <li>• <RichText>{t.approachItem3}</RichText></li>
-              <li>• <RichText>{t.approachItem4}</RichText></li>
-              <li>• <RichText>{t.approachItem5}</RichText></li>
-            </ul>
-          </Card>
-
-          <p className="text-center text-sm sm:text-base text-muted-foreground leading-relaxed">
-            <RichText>{t.approachClosing}</RichText>
-          </p>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-balance">{t.contactTitle}</h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              <RichText>{t.contactSubtitle}</RichText>
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            <Card className="p-5 sm:p-8">
-              <h3 className="font-semibold text-lg sm:text-xl mb-4 sm:mb-6">{t.contactInfo}</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <span>+55 81 9187-3346</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:consultorio.claradescendente@gmail.com" className="hover:text-primary transition-colors">
-                    consultorio.claradescendente@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5" />
-                  <div>
-                    <p>Boa Viagem, Recife, Pernambuco</p>
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-border">
-                  <p className="text-sm font-medium text-muted-foreground mb-3">{t.socialNetworks}</p>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="https://www.instagram.com/claradescendente/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="https://wa.me/+558191873346"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-[#25D366] transition-colors hover:bg-[#25D366] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
-                      aria-label="WhatsApp"
-                    >
-                      <MessageCircle className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="https://lnk.bio/claradescedente"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex h-11 w-11 items-center justify-center rounded-full bg-muted/60 text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
-                      aria-label="Link-in-bio"
-                    >
-                      <ExternalLink className="h-5 w-5" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-5 sm:p-8">
-              <h3 className="font-semibold text-lg sm:text-xl mb-4 sm:mb-6">{t.scheduleConsultationTitle}</h3>
-              <div className="space-y-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  <RichText>{t.consultationDesc}</RichText>
-                </p>
-                <div className="space-y-2">
-                  <p className="text-sm font-medium">{t.officeHours}</p>
-                  <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
-                </div>
-                <a 
-                  href="https://wa.me/+558191873346" // Substitua pelo link de agendamento/WhatsApp
-                  target="_blank"                        // Opcional: abre em nova aba
-                  rel="noopener noreferrer"              // Prática de segurança
-              >
-                <Button className="w-full mt-6">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {t.bookAppointment}
+                  {t.learnMore}
                 </Button>
-              </a>                
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+              </a>
+            </div>
 
-      {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 text-center md:text-left">
-            <div className="flex items-center space-x-2 justify-center md:justify-start">
-              <div className="w-12 h-12 sm:w-15 sm:h-15 rounded-full overflow-hidden bg-primary flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={logoPicture} // ALtere o caminho para onde sua imagem está
-                  alt="Logo Maria Clara M. Descendente"
-                  className="w-full h-full object-cover" // Faz a imagem preencher o container de 32x32px
-                />
-              </div>
-              <span className="font-medium text-sm sm:text-base">
-                {t.drName}, {t.clinicalPsychologist}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-sm text-muted-foreground">
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 animate-gentle-pulse rounded-full bg-primary" />
+                {t.heroBadgeAccepting}
+              </span>
+              <span className="hidden h-3 w-px bg-border sm:inline-block" />
+              <span className="flex items-center gap-2">
+                <Monitor className="h-3.5 w-3.5 text-primary" />
+                {t.heroBadgeOnline}
               </span>
             </div>
-            <div className="text-xs sm:text-sm text-muted-foreground md:text-right">
-              <p>{t.licenseNumber}</p>
-              <p className="mt-1">{t.copyright}</p>
-              <div className="mt-2 flex items-center justify-center md:justify-end gap-2">
-                <span>Developed by João Miguel Descendente</span>
-                <div className="flex gap-1">
-                  <a href="https://joaodescendente.vercel.app/" target="_blank" rel="noopener noreferrer">
+
+            <div className="flex items-center gap-3 pt-1">
+              <SocialLinks size="lg" />
+            </div>
+          </div>
+
+          {/* Foto + cartão de credenciais */}
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div
+              aria-hidden
+              className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 blur-xl"
+            />
+            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-xl ring-1 ring-border/60">
+              <Image
+                src="/pessoal-1.jpg"
+                alt="Maria Clara Descendente, psicóloga clínica"
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 480px"
+                className="img-zoom object-cover"
+              />
+            </div>
+
+            <div className="animate-float-slow absolute -bottom-6 -left-4 max-w-[16rem] sm:-left-8">
+              <Card className="gap-0 border-border/70 bg-card/95 p-4 shadow-lg backdrop-blur sm:p-5">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <GraduationCap className="h-5 w-5 text-primary" />
+                  </span>
+                  <div className="leading-tight">
+                    <p className="font-serif text-sm font-semibold">Mestrado · UFPE</p>
+                    <p className="text-xs text-muted-foreground">Neuropsiquiatria e Comportamento</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Acolhimento (ponte de empatia) ---------- */}
+      <section className="px-4 py-6 sm:px-6 sm:py-10">
+        <Reveal className="mx-auto max-w-3xl">
+          <figure className="relative rounded-2xl border border-border/60 bg-card/60 px-6 py-8 text-center sm:px-12 sm:py-12">
+            <Quote className="mx-auto mb-4 h-8 w-8 text-accent" />
+            <blockquote className="text-pretty font-serif text-xl leading-relaxed text-foreground/90 sm:text-2xl">
+              {t.empathyText}
+            </blockquote>
+          </figure>
+        </Reveal>
+      </section>
+
+      {/* ---------- Serviços ---------- */}
+      <section id="services" className="px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <Reveal className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
+            <span className="eyebrow mb-4">
+              <Heart className="h-3.5 w-3.5" />
+              {t.servicesEyebrow}
+            </span>
+            <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.75rem]">{t.servicesTitle}</h2>
+            <p className="mt-5 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {t.servicesIntro}
+            </p>
+          </Reveal>
+
+          {/* Bloco principal em destaque */}
+          <Reveal variant="scale">
+            <Card className="card-glow relative gap-0 overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-secondary/20 p-6 shadow-md hover:shadow-xl sm:p-9">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-primary/10 blur-2xl"
+              />
+              <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
+                <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
+                  <Utensils className="h-7 w-7" />
+                </span>
+                <div className="space-y-3">
+                  <span className="text-xs font-medium uppercase tracking-[0.16em] text-primary">{t.edTag}</span>
+                  <h3 className="font-serif text-2xl font-semibold leading-snug sm:text-[1.7rem]">{t.edTitle}</h3>
+                  <p className="max-w-3xl text-pretty leading-relaxed text-muted-foreground">{t.edDesc}</p>
+                </div>
+              </div>
+            </Card>
+          </Reveal>
+
+          {/* Frase de transição */}
+          <Reveal className="my-10 text-center sm:my-12">
+            <p className="mx-auto max-w-2xl text-pretty font-serif text-xl italic text-foreground/80 sm:text-2xl">
+              “{t.servicesBridge}”
+            </p>
+          </Reveal>
+
+          {/* Blocos complementares */}
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+            {complementaryServices.map((service, i) => (
+              <Reveal key={service.title} delay={i * 80}>
+                <Card className="card-glow h-full gap-0 border-border/70 p-6 hover:border-primary/30 hover:shadow-lg">
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/50 text-primary">
+                    <service.icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mb-2 font-serif text-lg font-semibold leading-snug">{service.title}</h3>
+                  <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{service.desc}</p>
+                </Card>
+              </Reveal>
+            ))}
+
+            {/* Bloco especial: família / Maudsley */}
+            <Reveal delay={complementaryServices.length * 80} className="sm:col-span-2 lg:col-span-1">
+              <Card className="card-glow h-full gap-0 border-accent/40 bg-accent/8 p-6 hover:shadow-lg">
+                <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
+                  <HeartHandshake className="h-6 w-6" />
+                </span>
+                <span className="mb-2 inline-block text-xs font-medium uppercase tracking-[0.14em] text-accent-foreground/80">
+                  {t.familyTag}
+                </span>
+                <h3 className="mb-2 font-serif text-lg font-semibold leading-snug">{t.familyTitle}</h3>
+                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{t.familyDesc}</p>
+              </Card>
+            </Reveal>
+          </div>
+
+          {/* Texto de fechamento */}
+          <Reveal className="mx-auto mt-12 max-w-3xl text-center sm:mt-14">
+            <p className="text-pretty leading-relaxed text-muted-foreground">{t.servicesClosing}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- Sobre ---------- */}
+      <section id="about" className="px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+            {/* Foto */}
+            <Reveal variant="scale" className="lg:sticky lg:top-24">
+              <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
+                <div
+                  aria-hidden
+                  className="absolute -inset-3 -z-10 rounded-[2rem] bg-gradient-to-tr from-accent/20 via-secondary/30 to-primary/15 blur-xl"
+                />
+                <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem] shadow-xl ring-1 ring-border/60">
+                  <Image
+                    src="/pessoal-2.jpg"
+                    alt="Maria Clara Descendente em seu ambiente de atendimento"
+                    fill
+                    sizes="(max-width: 1024px) 90vw, 420px"
+                    className="img-zoom object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Texto */}
+            <Reveal className="space-y-5">
+              <span className="eyebrow">
+                <Leaf className="h-3.5 w-3.5" />
+                {t.aboutEyebrow}
+              </span>
+              <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.75rem]">{t.aboutTitle}</h2>
+
+              <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
+                <p>{t.aboutP1}</p>
+                <p>{t.aboutP2}</p>
+                <p>{t.aboutP3}</p>
+
+                <ul className="space-y-2.5 border-l-2 border-primary/30 pl-5">
+                  {[t.aboutRef1, t.aboutRef2, t.aboutRef3, t.aboutRef4].map((ref, i) => (
+                    <li key={i} className="flex gap-2.5 text-sm sm:text-base">
+                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
+                      <span>{ref}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p>{t.aboutP4}</p>
+              </div>
+
+              {/* Selos de confiança */}
+              <div className="pt-4">
+                <p className="mb-3 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                  {t.aboutSeals}
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  {seals.map((seal) => (
+                    <span
+                      key={seal}
+                      className="rounded-full border border-border/70 bg-card/70 px-3.5 py-1.5 text-xs font-medium text-foreground/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-foreground"
+                    >
+                      {seal}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Abordagem / Jornada ---------- */}
+      <section id="approach" className="relative px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-4xl">
+          <Reveal className="mb-12 text-center sm:mb-16">
+            <span className="eyebrow mb-4">
+              <ArrowRight className="h-3.5 w-3.5" />
+              {t.approachEyebrow}
+            </span>
+            <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.75rem]">{t.approachTitle}</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {t.approachIntro}
+            </p>
+          </Reveal>
+
+          {/* Linha do tempo vertical */}
+          <ol className="relative space-y-6 sm:space-y-8">
+            <span
+              aria-hidden
+              className="absolute left-5 top-3 bottom-3 w-px bg-gradient-to-b from-primary/40 via-primary/25 to-transparent sm:left-6"
+            />
+            {steps.map((step, i) => (
+              <Reveal as="li" key={step.title} delay={i * 90} className="relative pl-16 sm:pl-20">
+                <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-serif text-base font-semibold text-primary-foreground shadow-md ring-4 ring-background sm:h-12 sm:w-12 sm:text-lg">
+                  {i + 1}
+                </span>
+                <Card className="card-glow gap-0 border-border/70 p-5 sm:p-6">
+                  <h3 className="font-serif text-lg font-semibold leading-snug sm:text-xl">{step.title}</h3>
+                  <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {step.desc}
+                  </p>
+                  <p className="mt-3 flex items-center gap-2 text-xs font-medium text-primary sm:text-sm">
+                    <Clock className="h-3.5 w-3.5" />
+                    {step.meta}
+                  </p>
+                </Card>
+              </Reveal>
+            ))}
+          </ol>
+
+          {/* Formatos de atendimento */}
+          <Reveal className="mt-14 sm:mt-16">
+            <h3 className="mb-5 text-center font-serif text-xl font-semibold sm:text-2xl">{t.formatsTitle}</h3>
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+              <Card className="card-glow gap-0 border-border/70 p-6">
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/50 text-primary">
+                  <Monitor className="h-5 w-5" />
+                </span>
+                <h4 className="mb-1.5 font-serif text-lg font-semibold">{t.formatOnlineTitle}</h4>
+                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{t.formatOnlineDesc}</p>
+              </Card>
+              <Card className="card-glow gap-0 border-border/70 p-6">
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent-foreground">
+                  <Home className="h-5 w-5" />
+                </span>
+                <h4 className="mb-1.5 font-serif text-lg font-semibold">{t.formatPresencialTitle}</h4>
+                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{t.formatPresencialDesc}</p>
+              </Card>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- CTA final ---------- */}
+      <section className="px-4 py-12 sm:px-6 sm:py-16">
+        <Reveal variant="scale" className="mx-auto max-w-5xl">
+          <div className="group relative overflow-hidden rounded-[2rem] border border-primary/20 shadow-lg">
+            <Image
+              src="/pessoal-3.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="img-zoom object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/92 via-primary/80 to-primary/55" />
+            <div className="relative px-6 py-12 text-center sm:px-12 sm:py-16">
+              <h2 className="text-display text-balance text-3xl text-primary-foreground sm:text-4xl lg:text-[2.6rem]">
+                {t.finalCtaTitle}
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-primary-foreground/85 sm:text-lg">
+                {t.finalCtaText}
+              </p>
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="mt-8 inline-block">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="btn-shine group min-h-12 rounded-full bg-background px-8 text-base text-foreground hover:bg-background/90"
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  {t.scheduleConsultation}
+                  <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ---------- Contato ---------- */}
+      <section id="contact" className="px-4 py-14 sm:px-6 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-5xl">
+          <Reveal className="mb-10 text-center sm:mb-14">
+            <span className="eyebrow mb-4">
+              <MessageCircle className="h-3.5 w-3.5" />
+              {t.contactEyebrow}
+            </span>
+            <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.6rem]">{t.contactTitle}</h2>
+            <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground sm:text-lg">
+              {t.contactSubtitle}
+            </p>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <Reveal>
+              <Card className="h-full gap-0 border-border/70 p-6 sm:p-8">
+                <h3 className="mb-6 font-serif text-xl font-semibold">{t.contactInfo}</h3>
+                <div className="space-y-5">
+                  <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3.5">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Phone className="h-5 w-5" />
+                    </span>
+                    <span className="text-sm sm:text-base">+55 81 9187-3346</span>
+                  </a>
+                  <a href={`mailto:${EMAIL}`} className="group flex items-center gap-3.5">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <Mail className="h-5 w-5" />
+                    </span>
+                    <span className="break-all text-sm transition-colors group-hover:text-primary sm:text-base">{EMAIL}</span>
+                  </a>
+                  <div className="flex items-start gap-3.5">
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <MapPin className="h-5 w-5" />
+                    </span>
+                    <span className="pt-2 text-sm sm:text-base">
+                      {t.locationLabel} <span className="text-muted-foreground">{t.locationOnline}</span>
+                    </span>
+                  </div>
+                  <div className="border-t border-border pt-5">
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                      {t.socialNetworks}
+                    </p>
+                    <SocialLinks />
+                  </div>
+                </div>
+              </Card>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <Card className="flex h-full flex-col gap-0 border-border/70 bg-gradient-to-br from-secondary/25 to-card p-6 sm:p-8">
+                <h3 className="mb-4 font-serif text-xl font-semibold">{t.bookConsultation}</h3>
+                <div className="mb-2 flex items-center gap-2 text-sm">
+                  <Clock className="h-4 w-4 text-primary" />
+                  <span className="font-medium">{t.officeHours}</span>
+                </div>
+                <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
+
+                <p className="mt-5 text-pretty text-sm leading-relaxed text-muted-foreground">{t.contactSubtitle}</p>
+
+                <div className="mt-auto space-y-3 pt-6">
+                  <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button className="btn-shine min-h-12 w-full rounded-full text-base">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      {t.bookAppointment}
+                    </Button>
+                  </a>
+                  <a href={`mailto:${EMAIL}`} className="block">
+                    <Button variant="outline" className="min-h-12 w-full rounded-full border-primary/30 bg-transparent text-base">
+                      <Mail className="mr-2 h-4 w-4" />
+                      {t.emailLabel}
+                    </Button>
+                  </a>
+                </div>
+              </Card>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- Rodapé ---------- */}
+      <footer className="border-t border-border px-4 py-10 sm:px-6 sm:py-12">
+        <div className="mx-auto max-w-6xl">
+          <p className="mx-auto mb-10 max-w-2xl text-center font-serif text-xl italic text-foreground/75 sm:text-2xl">
+            {t.footerClosing}
+          </p>
+          <div className="flex flex-col items-center justify-between gap-6 border-t border-border pt-8 text-center md:flex-row md:gap-0 md:text-left">
+            <div className="flex items-center gap-2.5">
+              <span className="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-primary/10 ring-1 ring-border">
+                <img src={logoPicture} alt="Logo Maria Clara Descendente" className="h-full w-full object-cover" />
+              </span>
+              <div className="leading-tight">
+                <p className="font-serif text-sm font-semibold">{t.drName}</p>
+                <p className="text-xs text-muted-foreground">{t.licenseNumber}</p>
+              </div>
+            </div>
+
+            <div className="text-xs text-muted-foreground md:text-right">
+              <p>{t.copyright}</p>
+              <div className="mt-2 flex items-center justify-center gap-2 md:justify-end">
+                <span>{t.developedBy}</span>
+                <span className="flex gap-1">
+                  <a href="https://joaodescendente.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Site">
                     <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
                       <Globe className="h-4 w-4" />
                     </Button>
                   </a>
-                  <a href="https://github.com/joaomigueld3" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/joaomigueld3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
                       <Github className="h-4 w-4" />
                     </Button>
                   </a>
-                  <a href="https://www.linkedin.com/in/joaomigueld3/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/joaomigueld3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full hover:text-primary">
                       <Linkedin className="h-4 w-4" />
                     </Button>
                   </a>
-                </div>
+                </span>
               </div>
             </div>
           </div>
         </div>
       </footer>
+    </div>
+  )
+}
+
+function SocialLinks({ size = "md" }: { size?: "md" | "lg" }) {
+  const dim = size === "lg" ? "h-12 w-12" : "h-11 w-11"
+  const icon = size === "lg" ? "h-6 w-6" : "h-5 w-5"
+  return (
+    <div className="flex items-center gap-3">
+      <a
+        href={INSTAGRAM}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        className={`flex ${dim} items-center justify-center rounded-full bg-muted/60 text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2`}
+      >
+        <Instagram className={icon} />
+      </a>
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        className={`flex ${dim} items-center justify-center rounded-full bg-muted/60 text-[#25D366] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#25D366] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2`}
+      >
+        <MessageCircle className={icon} />
+      </a>
+      <a
+        href={LINKBIO}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Link-in-bio"
+        className={`flex ${dim} items-center justify-center rounded-full bg-muted/60 text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2`}
+      >
+        <ExternalLink className={icon} />
+      </a>
     </div>
   )
 }

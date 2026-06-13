@@ -2,292 +2,400 @@ export type Language = "pt" | "en" | "es"
 
 export const translations = {
   pt: {
-    // Navigation
+    // ---------- Navegação ----------
     about: "Sobre",
     services: "Serviços",
-    approach: "Abordagem",
+    approach: "A jornada",
     contact: "Contato",
-    bookConsultation: "Agendar Consulta",
+    bookConsultation: "Agendar conversa",
 
-    // Hero Section (Home)
-    clinicalPsychologist: "Psicóloga Clínica • CRP 02/18166",
-    drName: "Maria Clara M. Descendente",
-    credentials: "Mestrado em Neuropsiquiatria e Ciências do Comportamento (UFPE)",
-    heroDescription:
-      "Ofereço cuidados psicológicos especializados com expertise em **transtornos alimentares**, terapias cognitivo-comportamentais e intervenções baseadas em mindfulness. Minha abordagem combina tratamentos reconhecidos como padrão ouro com cuidado compassivo e personalizado.",
-    scheduleConsultation: "Agendar Consulta",
-    learnMore: "Saiba Mais",
-    licensedPsychologist: "Psicóloga Clínica Licenciada",
-    mscNeuropsychiatry: "MSc Neuropsiquiatria",
-    professorSpeaker: "Professora e Palestrante",
-    acceptingPatients: "Aceitando novos pacientes • Atendimento online e presencial disponível",
+    // ---------- Hero ----------
+    heroBadge: "Psicóloga clínica · CRP 02/18166",
+    drName: "Maria Clara Descendente",
+    heroHeadline: "Reconstrua sua relação com a comida e redescubra quem você é para além do espelho.",
+    heroSubtitle:
+      "Atendimento especializado em transtornos alimentares, com base em evidências. Sem julgamento, sem atalhos.",
+    scheduleConsultation: "Agendar uma conversa inicial",
+    learnMore: "Conhecer meu trabalho",
+    heroBadgeOnline: "Atendimento online em todo o Brasil",
+    heroBadgePresencial: "Consultório em Boa Viagem, Recife",
+    heroBadgeAccepting: "Agenda aberta para novos pacientes",
 
-    // Services
-    specializationTitle: "Serviços",
-    specializationSubtitle:
-      "Atendimentos personalizados, baseados em evidências, para transtornos alimentares e outras demandas em saúde mental.",
-    eatingDisorders: "Psicoterapia especializada para transtornos alimentares",
-    eatingDisordersDesc:
-      "Tratamento dedicado a anorexia, bulimia, compulsão alimentar, TARE/ARFID e outras formas de relação difícil com comida, corpo e imagem, usando protocolos internacionais de padrão ouro adaptados à sua singularidade.",
-    cbt: "Psicoterapia para outras demandas",
-    cbtDesc:
-      "Atendimento para ansiedade, depressão, transtorno obsessivo-compulsivo (TOC), compulsões comportamentais, ansiedade social, problemas de relacionamento e outras questões emocionais.",
-    act: "Orientação parental e cuidado à família",
-    actDesc:
-      "Apoio para pais ou familiares que desejam compreender melhor a dinâmica emocional dos filhos/adolescentes e promover um ambiente de crescimento saudável. Inclusivo para famílias de pessoas com transtornos alimentares.",
-    mindfulness: "Treinamento de Mindfulness",
+    // ---------- Acolhimento ----------
+    empathyText:
+      "Se a sua relação com o corpo e a comida tem sido uma batalha solitária, aqui a sua dor é ouvida sem julgamentos. Respeito o seu ritmo e a sua história, e ofereço um espaço seguro para você, enfim, respirar com leveza.",
+
+    // ---------- Serviços ----------
+    servicesEyebrow: "Cuidado integral",
+    servicesTitle: "Um cuidado que enxerga você por inteiro",
+    servicesIntro:
+      "Muitas vezes, o conflito com a comida não vem sozinho: ele aparece junto de outras dores, ou de forma independente. O meu foco é cuidar de você como um todo.",
+    servicesBridge: "Entendo que você é um universo inteiro, e não apenas um sintoma.",
+
+    edTitle: "Psicoterapia especializada em transtornos alimentares",
+    edDesc:
+      "Para quando a relação com a comida e o corpo virou um peso. Tratamento dedicado a anorexia, bulimia, compulsão alimentar e TARE, com o que há de mais avançado no mundo, adaptado à sua realidade.",
+    edTag: "Especialidade principal",
+
+    mindfulnessTitle: "Mindfulness e autocompaixão",
     mindfulnessDesc:
-      "Programas estruturados de 8 semanas ou personalizados, voltados a reduzir estresse, regular emoções, cultivar presença e autocompaixão. Pode funcionar como parte integrada do tratamento.",
-    workshopMaudsley: "Workshop \"Novo Modelo Maudsley\" para cuidadores",
-    workshopMaudsleyDesc:
-      "Workshops voltados para responsáveis de pessoas com transtornos alimentares, com foco em comunicação, suporte, redução de conflitos e colaboração com o tratamento.",
-    trainingSessions: "Aulas, palestras e formação",
-    trainingSessionsDesc:
-      "Capacitações voltadas para profissionais, instituições e empresas nas áreas de transtornos alimentares, psicologia baseada em evidências, neurociência aplicada, mindfulness, TCC, ACT e DBT.",
+      "Ferramentas práticas para acalmar a mente, regular as emoções e cultivar uma relação mais gentil consigo mesma(o).",
 
-    // About Section
-    aboutTitle: "Sobre a Clara",
-    aboutIntro:
-      "Como psicóloga clínica, dedico meu trabalho a oferecer atendimentos acolhedores, embasados cientificamente e personalizados às necessidades de cada pessoa. Minha formação inclui:",
-    aboutFormation1: "Instrutora de Mindfulness (UK College of Mindfulness Meditation – Mindfulness Now)",
-    aboutFormation2: "Especialização em Terapia Cognitivo-Comportamental (FAFIRE)",
-    aboutFormation3: "Especialização em Neurociência Aplicada (UFPE)",
-    aboutFormation4:
-      "Treinamentos avançados em protocolos para transtornos alimentares: ACT para TEA (Duke University), DBT para TEA (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Protocolo Massachusetts para TARE/ARFID (CEBRATA) e Novo Modelo Maudsley para pais e cuidadores (NHS Maudsley)",
-    aboutFormation5: "Mestrado em Neuropsiquiatria e Ciências do Comportamento (UFPE)",
-    aboutPosture:
-      "Minha postura profissional alia uma atitude atenciosa, empática e flexível com a estrutura e o rigor necessários para garantir **resultados eficazes**. Acredito em criar um ambiente seguro, livre de julgamentos, para que o tratamento seja ao mesmo tempo humano e eficaz.",
-    aboutGoal:
-      "Ao longo do processo, meu objetivo é que você se sinta mais em paz, conectado aos seus valores, vivendo uma vida que valha a pena ser vivida e conquistando mais autonomia.",
-    educationCredentials: "Educação e Credenciais",
-    universityEdinburgh: "Universidade Federal de Pernambuco",
-    stateBoardCertified: "Conselho Regional de Psicologia de Pernambuco (CRP 02/18166)",
-    eatingDisordersSpecialist: "Especialista em Transtornos Alimentares",
-    iaedpCertified: "Certificada USP e CEBRATA",
-    professionalRoles: "Funções Profissionais e Atuação",
-    professorClinical: "• Instrutora de Mindfulness (Mindfulness Now – UK College of Mindfulness Meditation)",
-    conferenceSpeaker: "• Professora, palestrante e facilitadora de workshops em transtornos alimentares e terapias contextuais",
-    researchContributor: "• Atuação com foco em psicologia baseada em evidências e neurociência aplicada",
-    clinicalSupervisor: "• Atuação em formação e capacitação de profissionais de saúde mental",
+    anxietyTitle: "Ansiedade, fobias e TOC",
+    anxietyDesc:
+      "O excesso de futuro, o medo paralisante e a necessidade de controle cansam. Com a TCC e abordagens contextuais, devolvemos o manejo das emoções e a liberdade de viver.",
 
-    // Approach Section
-    approachTitle: "Abordagem",
+    depressionTitle: "Depressão e regulação emocional",
+    depressionDesc:
+      "Para quando a vida perde a cor ou o peso emocional fica insuportável. Um espaço seguro para resgatar sentido, vitalidade e conexão com o que importa.",
+
+    adhdTitle: "TDAH",
+    adhdDesc:
+      "O TDAH traz desafios de organização, foco e autoestima. Construímos estratégias práticas, entendendo como o cérebro impacta a rotina e as emoções.",
+
+    relationshipsTitle: "Problemas de relacionamento",
+    relationshipsDesc:
+      "Nossa saúde mental floresce ou adoece nos vínculos. Apoio na comunicação, em limites saudáveis e na compreensão de padrões que se repetem.",
+
+    familyTitle: "Apoio à família e cuidadores: Novo Modelo Maudsley",
+    familyDesc:
+      "Você não sabe mais como ajudar seu filho ou ente querido? Orientar pais e familiares é essencial. Com o Novo Modelo Maudsley, preparamos quem está ao redor para ser uma rede de apoio ativa, reduzindo o estresse e fortalecendo os laços.",
+    familyTag: "Para famílias e cuidadores",
+
+    servicesClosing:
+      "Muitas vezes, ansiedade, TDAH e desregulação emocional alimentam o transtorno alimentar. Em outros casos, são a demanda principal. A minha formação me permite enxergar essas conexões e cuidar da estrutura emocional como um todo, não apenas apagar incêndios.",
+
+    // ---------- Sobre ----------
+    aboutEyebrow: "Sobre mim",
+    aboutTitle: "Ciência a serviço do cuidado",
+    aboutP1:
+      "Há mais de 10 anos, escolhi a psicologia como o meu modo de estar no mundo. Sempre me moveu a curiosidade pelo comportamento humano e o desejo genuíno de ajudar as pessoas a encontrarem sentido e resiliência diante das dificuldades.",
+    aboutP2:
+      "Para mim, a clínica é mais que um espaço de tratamento: é um lugar de encontro pautado pela ética e pela autenticidade. Como acredito que cada pessoa é única, ao longo da última década mergulhei nos estudos para que o meu acolhimento tivesse o suporte da ciência mais avançada.",
+    aboutP3:
+      "Cursei o Mestrado em Neuropsiquiatria e Ciências do Comportamento na UFPE, com especializações em Terapia Cognitivo Comportamental e Neurociência Aplicada. Como transtornos alimentares pedem um olhar muito especializado, me formei com as maiores referências do mundo:",
+    aboutRef1: "Casos complexos com Lucene Wisniewski (CBT Ohio) e Rhonda Merwin (Duke University)",
+    aboutRef2: "Terapia de Aceitação e Compromisso (ACT) com o seu criador, Steven Hayes",
+    aboutRef3: "Protocolos para anorexia: MANTRA (CEBRATA) e SSCM (University of Sydney)",
+    aboutRef4: "Novo Modelo Maudsley, para que as famílias também saibam ser um porto seguro",
+    aboutP4:
+      "Toda essa bagagem existe por um motivo: oferecer a você um cuidado seguro, humano e eficaz. Quero que, por meio dessa ciência feita com afeto, você resgate a sua autonomia e descubra quem é para além de qualquer diagnóstico.",
+    aboutSeals: "Formação com referências internacionais",
+
+    // ---------- Abordagem / Jornada ----------
+    approachEyebrow: "Como funciona",
+    approachTitle: "A nossa jornada, passo a passo",
     approachIntro:
-      "Trabalho com base em evidências científicas, integrando neurociência, terapias comportamentais e abordagens contextuais para oferecer um cuidado ético, humano e eficaz.",
-    approachItem1: "Ambiente acolhedor, seguro e livre de julgamentos.",
-    approachItem2: "Adaptação de protocolos de **padrão ouro** às suas necessidades e contexto de vida.",
-    approachItem3: "Estrutura, clareza e acompanhamento consistente ao longo do tratamento.",
-    approachItem4: "Colaboração com equipe multidisciplinar, quando necessário.",
-    approachItem5: "Promoção de autonomia, autocompaixão e conexão com seus valores pessoais.",
-    approachClosing:
-      "Você não estará sozinho(a) nessa jornada. Juntos, construímos um caminho de transformação que respeite seu ritmo e promova uma vida mais alinhada e significativa.",
+      "Dar o primeiro passo pode assustar, ainda mais depois de experiências difíceis. Por isso, o nosso processo se apoia em três pilares: clareza, segurança e colaboração.",
 
-    // Contact Section
-    contactTitle: "Contato",
+    step1Title: "O encontro inicial: acolhimento e escuta",
+    step1Desc:
+      "A nossa primeira conversa é um espaço protegido. Mais que o diagnóstico, quero entender quem você é, o que te dói e o que você busca.",
+    step1Meta: "50 minutos · criar vínculo e entender o seu contexto",
+
+    step2Title: "Avaliação e planejamento personalizado",
+    step2Desc:
+      "Aqui a ciência se adapta à sua vida, não o contrário. Com base em protocolos comprovados (ACT, DBT, TCC), traçamos juntos um caminho claro.",
+    step2Meta: "Transparência em cada estratégia · metas reais, no seu ritmo",
+
+    step3Title: "Sessões de psicoterapia: o trabalho contínuo",
+    step3Desc:
+      "As sessões são semanais e desenvolvem ferramentas práticas para o dia a dia, unindo a fala ao treino de habilidades como regulação emocional e mindfulness.",
+    step3Meta: "Abordagem integrativa · foco na sua autonomia",
+
+    step4Title: "Suporte multidisciplinar e familiar, quando necessário",
+    step4Desc:
+      "Casos complexos pedem uma rede. Quando faz sentido, trabalho com nutricionistas e psiquiatras e ofereço o Novo Modelo Maudsley para a família apoiar de forma efetiva.",
+    step4Meta: "Rede de apoio coordenada em torno de você",
+
+    formatsTitle: "Formatos de atendimento",
+    formatOnlineTitle: "Online",
+    formatOnlineDesc:
+      "Plataforma de vídeo segura, com a mesma proximidade e ética do consultório. Para todo o Brasil.",
+    formatPresencialTitle: "Presencial",
+    formatPresencialDesc: "Consultório em Boa Viagem, Recife, um refúgio de tranquilidade.",
+
+    // ---------- CTA final ----------
+    finalCtaTitle: "Vamos dar o primeiro passo juntos?",
+    finalCtaText:
+      "Você não precisa carregar isso sozinha(o). Agende uma conversa inicial e descubra como posso te ajudar.",
+
+    // ---------- Contato ----------
+    contactEyebrow: "Contato",
+    contactTitle: "Estou por perto quando você decidir começar",
     contactSubtitle:
-      "Pronto(a) para começar sua jornada em direção à melhora e crescimento? Estou aqui para ajudar.",
-    contactInfo: "Informações de Contato",
-    socialNetworks: "Redes sociais",
-    scheduleConsultationTitle: "Agendar Consulta",
-    consultationDesc:
-      "Ofereço atendimento presencial em Recife e online para todo o Brasil. As consultas iniciais duram 50 minutos, incluem avaliação detalhada e definição conjunta dos próximos passos.",
-    officeHours: "Horário de funcionamento:",
-    mondayThursday: "Segunda a Sexta: 10h às 22h GMT-3",
-    // friday: "Sexta: 9:00 - 15:00",
-    bookAppointment: "Agendar Consulta",
+      "Sem formulários longos. Escolha o canal mais confortável para você que eu respondo pessoalmente.",
+    contactInfo: "Como falar comigo",
+    socialNetworks: "Redes",
+    officeHours: "Horário de atendimento",
+    mondayThursday: "Segunda a sexta · 10h às 22h (GMT-3)",
+    locationLabel: "Boa Viagem, Recife — PE",
+    locationOnline: "e online para todo o Brasil",
+    bookAppointment: "Conversar pelo WhatsApp",
+    emailLabel: "Enviar um email",
 
-    // Footer
-    licenseNumber: "Psicóloga Clínica Licenciada • CRP 02/18166",
-    copyright: "© 2025 Maria Clara M. Descendente. Todos os direitos reservados.",
+    // ---------- Rodapé ----------
+    footerClosing: "Você não precisa carregar isso sozinha(o). Vamos conversar?",
+    licenseNumber: "Psicóloga clínica · CRP 02/18166",
+    copyright: "© 2025 Maria Clara Descendente. Todos os direitos reservados.",
+    developedBy: "Desenvolvido por João Miguel Descendente",
   },
+
   en: {
-    // Navigation
     about: "About",
     services: "Services",
-    approach: "Approach",
-    contact: "Contato",
-    bookConsultation: "Book Consultation",
+    approach: "The journey",
+    contact: "Contact",
+    bookConsultation: "Book a talk",
 
-    // Hero Section
-    clinicalPsychologist: "Clinical Psychologist",
-    drName: "Maria Clara M. Descendente",
-    credentials: "MSc Neuropsychiatry • Professor • Speaker",
-    heroDescription:
-        "I offer specialized psychological care with expertise in eating disorders, cognitive-behavioral therapy, and mindfulness-based interventions. My approach combines evidence-based treatments with compassionate, personalized care.",
-    scheduleConsultation: "Schedule Consultation",
-    learnMore: "Learn More",
-    licensedPsychologist: "Licensed Clinical Psychologist",
-    mscNeuropsychiatry: "MSc Neuropsychiatry",
-    professorSpeaker: "Professor and Speaker",
-    acceptingPatients: "Accepting new patients • Online sessions available",
+    heroBadge: "Clinical psychologist · CRP 02/18166",
+    drName: "Maria Clara Descendente",
+    heroHeadline: "Rebuild your relationship with food and rediscover who you are beyond the mirror.",
+    heroSubtitle: "Specialized care for eating disorders, grounded in evidence. No judgment, no shortcuts.",
+    scheduleConsultation: "Book a first conversation",
+    learnMore: "See how I work",
+    heroBadgeOnline: "Online sessions across Brazil",
+    heroBadgePresencial: "In person in Boa Viagem, Recife",
+    heroBadgeAccepting: "Currently accepting new patients",
 
-    // Specializations
-    specializationTitle: "Areas of Specialization",
-    specializationSubtitle:
-        "Evidence-based therapeutic approaches tailored to your unique needs and goals",
-    eatingDisorders: "Eating Disorders",
-    eatingDisordersDesc:
-        "Specialized treatment for anorexia, bulimia, binge eating disorder, and other eating-related concerns",
-    cbt: "Cognitive-Behavioral Therapy (CBT)",
-    cbtDesc: "Evidence-based CBT techniques to address anxiety, depression, and thought patterns",
-    act: "Acceptance and Commitment Therapy (ACT)",
-    actDesc: "ACT approaches focusing on psychological flexibility and value-based living",
-    mindfulness: "Mindfulness Training",
+    empathyText:
+      "If your journey with your body and food has felt like a lonely battle, here your pain is heard without judgment. I respect your pace and your story, and I offer a safe space where you can finally breathe with ease.",
+
+    servicesEyebrow: "Integral care",
+    servicesTitle: "Care that sees the whole of you",
+    servicesIntro:
+      "Often the conflict with food does not come alone: it shows up with other pains, or on its own. My focus is to care for you as a whole.",
+    servicesBridge: "I understand that you are an entire universe, not just a symptom.",
+
+    edTitle: "Specialized psychotherapy for eating disorders",
+    edDesc:
+      "For when your relationship with food and your body has become a weight. Dedicated treatment for anorexia, bulimia, binge eating and ARFID, using the most advanced approaches in the world, adapted to your reality.",
+    edTag: "Main specialty",
+
+    mindfulnessTitle: "Mindfulness and self compassion",
     mindfulnessDesc:
-      "Structured 8-week or customized programs aimed at reducing stress, regulating emotions, cultivating presence and self-compassion. Can work as an integrated part of treatment.",
-    workshopMaudsley: "Workshop \"New Maudsley Model\" for caregivers",
-    workshopMaudsleyDesc:
-      "Workshops for caregivers of people with eating disorders, focusing on communication, support, conflict reduction, and collaboration with treatment.",
-    trainingSessions: "Classes, talks and training",
-    trainingSessionsDesc:
-      "Training for professionals, institutions and companies in eating disorders, evidence-based psychology, applied neuroscience, mindfulness, CBT, ACT and DBT.",
+      "Practical tools to calm the mind, regulate emotions and build a kinder relationship with yourself.",
 
-    // About Section
-    aboutTitle: "About Clara",
-    aboutIntro:
-        "As a clinical psychologist, I dedicate my work to offering welcoming, scientifically grounded, and personalized care tailored to each person's needs. My training includes:",
-    aboutFormation1: "Mindfulness Instructor (UK College of Mindfulness Meditation – Mindfulness Now)",
-    aboutFormation2: "Specialization in Cognitive-Behavioral Therapy (FAFIRE)",
-    aboutFormation3: "Specialization in Applied Neuroscience (UFPE)",
-    aboutFormation4:
-        "Advanced training in eating disorder protocols: ACT for ED (Duke University), DBT for ED (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Massachusetts Protocol for TARE/ARFID (CEBRATA), and New Maudsley Model for parents and caregivers (NHS Maudsley)",
-    aboutFormation5: "Master's in Neuropsychiatry and Behavioral Sciences (UFPE)",
-    aboutPosture:
-        "My professional stance combines an attentive, empathetic, and flexible attitude with the structure and rigor needed to ensure **effective results**. I believe in creating a safe, non-judgmental environment so that treatment is both human and effective.",
-    aboutGoal:
-        "Throughout the process, my goal is for you to feel more at peace, connected to your values, living a life worth living, and gaining greater autonomy.",
-    educationCredentials: "Education and Credentials",
-    universityEdinburgh: "Federal University of Pernambuco",
-    stateBoardCertified: "Regional Council of Psychology of Pernambuco (CRP 02/18166)",
-    eatingDisordersSpecialist: "Eating Disorders Specialist",
-    iaedpCertified: "Certified USP and CEBRATA",
-    professionalRoles: "Professional Roles",
-    professorClinical: "• Professor of Clinical Psychology and Neuropsychology",
-    conferenceSpeaker: "• Speaker at universities and national media",
-    researchContributor: "• Research Contributor in Neuroscience",
-    clinicalSupervisor: "• Mindfulness Now Teacher (UK College of Mindfulness Meditation)",
+    anxietyTitle: "Anxiety, phobias and OCD",
+    anxietyDesc:
+      "Too much future, paralyzing fear and the need for control are exhausting. With CBT and contextual approaches, we restore emotional balance and the freedom to live.",
 
-    // Approach Section
-    approachTitle: "Approach",
+    depressionTitle: "Depression and emotional regulation",
+    depressionDesc:
+      "For when life loses its color or the emotional weight feels unbearable. A safe space to recover meaning, vitality and connection with what matters.",
+
+    adhdTitle: "ADHD",
+    adhdDesc:
+      "ADHD brings challenges with organization, focus and self esteem. We build practical strategies, understanding how the brain shapes routine and emotions.",
+
+    relationshipsTitle: "Relationship difficulties",
+    relationshipsDesc:
+      "Our mental health blooms or suffers within our bonds. Support with communication, healthy boundaries and the patterns that keep repeating.",
+
+    familyTitle: "Support for family and caregivers: New Maudsley Model",
+    familyDesc:
+      "Do you no longer know how to help your child or loved one? Guiding parents and family is essential. With the New Maudsley Model, we prepare those around the patient to be an active support network, easing stress and strengthening bonds.",
+    familyTag: "For families and caregivers",
+
+    servicesClosing:
+      "Often anxiety, ADHD and emotional dysregulation fuel an eating disorder. At other times, they are the main concern. My training lets me see these connections and care for the whole emotional structure, not just put out fires.",
+
+    aboutEyebrow: "About me",
+    aboutTitle: "Science in the service of care",
+    aboutP1:
+      "More than 10 years ago, I chose psychology as my way of being in the world. I have always been driven by curiosity about human behavior and a genuine wish to help people find meaning and resilience in their struggles.",
+    aboutP2:
+      "To me, the clinic is more than a place of treatment: it is a meeting place built on ethics and authenticity. Because I believe each person is unique, over the last decade I immersed myself in study so my care would be backed by the most advanced science.",
+    aboutP3:
+      "I hold a Master's in Neuropsychiatry and Behavioral Sciences from UFPE, with specializations in Cognitive Behavioral Therapy and Applied Neuroscience. Because eating disorders demand a highly specialized view, I trained with the world's leading references:",
+    aboutRef1: "Complex cases with Lucene Wisniewski (CBT Ohio) and Rhonda Merwin (Duke University)",
+    aboutRef2: "Acceptance and Commitment Therapy (ACT) with its creator, Steven Hayes",
+    aboutRef3: "Anorexia protocols: MANTRA (CEBRATA) and SSCM (University of Sydney)",
+    aboutRef4: "New Maudsley Model, so families can also be a safe harbor",
+    aboutP4:
+      "All of this exists for one reason: to offer you safe, human and effective care. I want this science, made with affection, to help you reclaim your autonomy and discover who you are beyond any diagnosis.",
+    aboutSeals: "Training with international references",
+
+    approachEyebrow: "How it works",
+    approachTitle: "Our journey, step by step",
     approachIntro:
-        "I work with an evidence-based perspective, integrating neuroscience, behavioral therapies, and contextual approaches to offer ethical, human, and effective care.",
-    approachItem1: "A welcoming, non-judgmental, and safe environment.",
-    approachItem2: "Adaptation of gold-standard protocols to your needs and life context.",
-    approachItem3: "Structure, clarity, and consistent follow-up throughout treatment.",
-    approachItem4: "Collaboration with a multidisciplinary team when necessary.",
-    approachItem5: "Promotion of autonomy, self-compassion, and connection with your personal values.",
-    approachClosing:
-        "You will not be alone on this journey. Together, we build a path of transformation that respects your pace and supports a more aligned and meaningful life.",
+      "Taking the first step can feel daunting, especially after hard experiences. That is why our process rests on three pillars: clarity, safety and collaboration.",
 
-    // Contact Section
-    contactTitle: "Contact",
-    contactSubtitle: "Ready to start your journey towards improvement and growth? I'm here to help.",
-    contactInfo: "Contact Information",
-    socialNetworks: "Social networks",
-    scheduleConsultationTitle: "Schedule Consultation",
-    consultationDesc:
-        "I offer in-person and tele-counseling sessions to accommodate your needs. Initial consultations last 50 minutes and include a comprehensive assessment.",
-    officeHours: "Office Hours:",
-    mondayThursday: "Monday - Friday: 10:00 AM - 10:00 PM GMT-3",
-    bookAppointment: "Book Appointment",
+    step1Title: "The first meeting: welcome and listening",
+    step1Desc:
+      "Our first conversation is a protected space. More than a diagnosis, I want to understand who you are, what hurts and what you are looking for.",
+    step1Meta: "50 minutes · building trust and understanding your context",
 
-    // Footer
-    licenseNumber: "Licensed Clinical Psychologist • CRP 02/18166",
-    copyright: "© 2025 Maria Clara M. Descendente. All rights reserved.",
+    step2Title: "Assessment and personalized planning",
+    step2Desc:
+      "Here science adapts to your life, not the other way around. Based on proven protocols (ACT, DBT, CBT), we map out a clear path together.",
+    step2Meta: "Transparency on every strategy · real goals, at your pace",
+
+    step3Title: "Therapy sessions: the ongoing work",
+    step3Desc:
+      "Sessions are weekly and build practical tools for everyday life, joining conversation with skills like emotional regulation and mindfulness.",
+    step3Meta: "Integrative approach · focused on your autonomy",
+
+    step4Title: "Multidisciplinary and family support, when needed",
+    step4Desc:
+      "Complex cases call for a network. When it makes sense, I work with nutritionists and psychiatrists and offer the New Maudsley Model so the family can support effectively.",
+    step4Meta: "A support network coordinated around you",
+
+    formatsTitle: "Ways to meet",
+    formatOnlineTitle: "Online",
+    formatOnlineDesc: "A secure video platform, with the same closeness and ethics of the office. Across Brazil.",
+    formatPresencialTitle: "In person",
+    formatPresencialDesc: "Office in Boa Viagem, Recife, a refuge of calm.",
+
+    finalCtaTitle: "Shall we take the first step together?",
+    finalCtaText: "You don't have to carry this alone. Book a first conversation and discover how I can help.",
+
+    contactEyebrow: "Contact",
+    contactTitle: "I'm here whenever you decide to begin",
+    contactSubtitle:
+      "No long forms. Choose the channel you're most comfortable with and I'll reply personally.",
+    contactInfo: "How to reach me",
+    socialNetworks: "Social",
+    officeHours: "Office hours",
+    mondayThursday: "Monday to Friday · 10am to 10pm (GMT-3)",
+    locationLabel: "Boa Viagem, Recife — PE",
+    locationOnline: "and online across Brazil",
+    bookAppointment: "Chat on WhatsApp",
+    emailLabel: "Send an email",
+
+    footerClosing: "You don't have to carry this alone. Shall we talk?",
+    licenseNumber: "Clinical psychologist · CRP 02/18166",
+    copyright: "© 2025 Maria Clara Descendente. All rights reserved.",
+    developedBy: "Developed by João Miguel Descendente",
   },
+
   es: {
-    // Navigation
-    about: "Acerca de Mí",
+    about: "Sobre mí",
     services: "Servicios",
-    approach: "Enfoque",
+    approach: "El proceso",
     contact: "Contacto",
-    bookConsultation: "Reservar Consulta",
+    bookConsultation: "Agendar charla",
 
-    // Hero Section
-    clinicalPsychologist: "Psicóloga Clínica",
-    drName: "Maria Clara M. Descendente",
-    credentials: "MSc Neuropsiquiatría • Profesora • Ponente",
-    heroDescription:
-        "Ofrezco atención psicológica especializada con experiencia en trastornos alimentarios, terapia cognitivo-conductual e intervenciones basadas en mindfulness. Mi enfoque combina tratamientos basados en evidencia con atención compasiva y personalizada.",
-    scheduleConsultation: "Agendar Consulta",
-    learnMore: "Saber Más",
-    licensedPsychologist: "Psicóloga Clínica Licenciada",
-    mscNeuropsychiatry: "MSc Neuropsiquiatría",
-    professorSpeaker: "Profesora y Ponente",
-    acceptingPatients: "Aceptando nuevos pacientes • Atención en línea disponible",
+    heroBadge: "Psicóloga clínica · CRP 02/18166",
+    drName: "Maria Clara Descendente",
+    heroHeadline: "Reconstruye tu relación con la comida y redescubre quién eres más allá del espejo.",
+    heroSubtitle:
+      "Atención especializada en trastornos alimentarios, basada en evidencia. Sin juicios, sin atajos.",
+    scheduleConsultation: "Agendar una primera charla",
+    learnMore: "Conocer mi trabajo",
+    heroBadgeOnline: "Atención en línea en todo Brasil",
+    heroBadgePresencial: "Presencial en Boa Viagem, Recife",
+    heroBadgeAccepting: "Agenda abierta para nuevos pacientes",
 
-    // Specializations
-    specializationTitle: "Áreas de Especialización",
-    specializationSubtitle:
-        "Enfoques terapéuticos basados en evidencia, adaptados a sus necesidades y objetivos únicos",
-    eatingDisorders: "Trastornos Alimentarios",
-    eatingDisordersDesc:
-        "Tratamiento especializado para anorexia, bulimia, trastorno por atracón y otras preocupaciones relacionadas con la alimentación",
-    cbt: "Terapia Cognitivo-Conductual (TCC)",
-    cbtDesc: "Técnicas de TCC basadas en evidencia para abordar la ansiedad, la depresión y los patrones de pensamiento",
-    act: "Terapia de Aceptación y Compromiso (ACT)",
-    actDesc: "Enfoques de ACT centrándose en la flexibilidad psicológica y la vida basada en valores",
-    mindfulness: "Entrenamiento en Mindfulness",
+    empathyText:
+      "Si tu relación con el cuerpo y la comida ha sido una batalla solitaria, aquí tu dolor se escucha sin juicios. Respeto tu ritmo y tu historia, y te ofrezco un espacio seguro para que, por fin, respires con ligereza.",
+
+    servicesEyebrow: "Cuidado integral",
+    servicesTitle: "Un cuidado que te ve por completo",
+    servicesIntro:
+      "Muchas veces el conflicto con la comida no viene solo: aparece junto a otros dolores, o de forma independiente. Mi foco es cuidarte como un todo.",
+    servicesBridge: "Entiendo que eres un universo entero, y no solo un síntoma.",
+
+    edTitle: "Psicoterapia especializada en trastornos alimentarios",
+    edDesc:
+      "Para cuando la relación con la comida y el cuerpo se volvió un peso. Tratamiento dedicado a anorexia, bulimia, atracones y TARE/ARFID, con lo más avanzado del mundo, adaptado a tu realidad.",
+    edTag: "Especialidad principal",
+
+    mindfulnessTitle: "Mindfulness y autocompasión",
     mindfulnessDesc:
-      "Programas estructurados de 8 semanas o personalizados, orientados a reducir el estrés, regular las emociones, cultivar la presencia y la autocompasión. Puede funcionar como parte integrada del tratamiento.",
-    workshopMaudsley: "Taller \"Modelo Maudsley\" para cuidadores",
-    workshopMaudsleyDesc:
-      "Talleres dirigidos a responsables de personas con trastornos alimentarios, con foco en comunicación, apoyo, reducción de conflictos y colaboración con el tratamiento.",
-    trainingSessions: "Clases, charlas y formación",
-    trainingSessionsDesc:
-      "Capacitaciones para profesionales, instituciones y empresas en trastornos alimentarios, psicología basada en evidencia, neurociencia aplicada, mindfulness, TCC, ACT y DBT.",
+      "Herramientas prácticas para calmar la mente, regular las emociones y crear una relación más amable contigo misma(o).",
 
-    // About Section
-    aboutTitle: "Acerca de Clara",
-    aboutIntro:
-        "Como psicóloga clínica, dedico mi trabajo a ofrecer una atención acogedora, con base científica y personalizada a las necesidades de cada persona. Mi formación incluye:",
-    aboutFormation1: "Instructora de Mindfulness (UK College of Mindfulness Meditation – Mindfulness Now)",
-    aboutFormation2: "Especialización en Terapia Cognitivo-Conductual (FAFIRE)",
-    aboutFormation3: "Especialización en Neurociencia Aplicada (UFPE)",
-    aboutFormation4:
-        "Entrenamientos avanzados en protocolos para trastornos alimentarios: ACT para TCA (Duke University), DBT para TCA (CBT Ohio), MANTRA (CEBRATA), SSCM (Sydney University), Protocolo Massachusetts para TARE/ARFID (CEBRATA) y Modelo Maudsley para padres y cuidadores (NHS Maudsley)",
-    aboutFormation5: "Máster en Neuropsiquiatría y Ciencias del Comportamiento (UFPE)",
-    aboutPosture:
-        "Mi postura profesional combina una actitud atenta, empática y flexible con la estructura y el rigor necesarios para garantizar **resultados eficaces**. Creo en crear un ambiente seguro, libre de juicios, para que el tratamiento sea a la vez humano y eficaz.",
-    aboutGoal:
-        "A lo largo del proceso, mi objetivo es que te sientas más en paz, conectado/a a tus valores, viviendo una vida que valga la pena ser vivida y conquistando más autonomía.",
-    educationCredentials: "Educación y Credenciales",
-    universityEdinburgh: "Universidad Federal de Pernambuco",
-    stateBoardCertified: "Consejo Regional de Psicología de Pernambuco (CRP 02/18166)",
-    eatingDisordersSpecialist: "Especialista en Trastornos Alimentarios",
-    iaedpCertified: "Certificada USP y CEBRATA",
-    professionalRoles: "Roles Profesionales",
-    professorClinical: "• Profesora de Psicología Clínica y Neuropsicología",
-    conferenceSpeaker: "• Ponente en universidades y medios nacionales",
-    researchContributor: "• Contribuidora de Investigación en Neurociencia",
-    clinicalSupervisor: "• Profesora de Mindfulness Now (UK College of Mindfulness Meditation)",
+    anxietyTitle: "Ansiedad, fobias y TOC",
+    anxietyDesc:
+      "El exceso de futuro, el miedo paralizante y la necesidad de control agotan. Con la TCC y enfoques contextuales, devolvemos el manejo de las emociones y la libertad de vivir.",
 
-    // Approach Section
-    approachTitle: "Enfoque",
+    depressionTitle: "Depresión y regulación emocional",
+    depressionDesc:
+      "Para cuando la vida pierde color o el peso emocional se vuelve insoportable. Un espacio seguro para recuperar sentido, vitalidad y conexión con lo que importa.",
+
+    adhdTitle: "TDAH",
+    adhdDesc:
+      "El TDAH trae desafíos de organización, foco y autoestima. Construimos estrategias prácticas, entendiendo cómo el cerebro impacta la rutina y las emociones.",
+
+    relationshipsTitle: "Problemas de relación",
+    relationshipsDesc:
+      "Nuestra salud mental florece o enferma en los vínculos. Apoyo en la comunicación, en límites sanos y en los patrones que se repiten.",
+
+    familyTitle: "Apoyo a la familia y cuidadores: Nuevo Modelo Maudsley",
+    familyDesc:
+      "¿Ya no sabes cómo ayudar a tu hijo o ser querido? Orientar a padres y familiares es esencial. Con el Nuevo Modelo Maudsley, preparamos a quienes están alrededor para ser una red de apoyo activa, reduciendo el estrés y fortaleciendo los lazos.",
+    familyTag: "Para familias y cuidadores",
+
+    servicesClosing:
+      "Muchas veces la ansiedad, el TDAH y la desregulación emocional alimentan el trastorno alimentario. En otros casos, son la demanda principal. Mi formación me permite ver esas conexiones y cuidar toda la estructura emocional, no solo apagar incendios.",
+
+    aboutEyebrow: "Sobre mí",
+    aboutTitle: "Ciencia al servicio del cuidado",
+    aboutP1:
+      "Hace más de 10 años elegí la psicología como mi modo de estar en el mundo. Siempre me movió la curiosidad por el comportamiento humano y el deseo genuino de ayudar a las personas a encontrar sentido y resiliencia ante las dificultades.",
+    aboutP2:
+      "Para mí, la clínica es más que un espacio de tratamiento: es un lugar de encuentro guiado por la ética y la autenticidad. Como creo que cada persona es única, en la última década me sumergí en el estudio para que mi acogida tuviera el respaldo de la ciencia más avanzada.",
+    aboutP3:
+      "Cursé el Máster en Neuropsiquiatría y Ciencias del Comportamiento en la UFPE, con especializaciones en Terapia Cognitivo Conductual y Neurociencia Aplicada. Como los trastornos alimentarios exigen una mirada muy especializada, me formé con las mayores referencias del mundo:",
+    aboutRef1: "Casos complejos con Lucene Wisniewski (CBT Ohio) y Rhonda Merwin (Duke University)",
+    aboutRef2: "Terapia de Aceptación y Compromiso (ACT) con su creador, Steven Hayes",
+    aboutRef3: "Protocolos para anorexia: MANTRA (CEBRATA) y SSCM (University of Sydney)",
+    aboutRef4: "Nuevo Modelo Maudsley, para que las familias también sepan ser un puerto seguro",
+    aboutP4:
+      "Todo esto existe por una razón: ofrecerte un cuidado seguro, humano y eficaz. Quiero que, mediante esta ciencia hecha con afecto, recuperes tu autonomía y descubras quién eres más allá de cualquier diagnóstico.",
+    aboutSeals: "Formación con referencias internacionales",
+
+    approachEyebrow: "Cómo funciona",
+    approachTitle: "Nuestro proceso, paso a paso",
     approachIntro:
-        "Trabajo desde una base de evidencia científica, integrando neurociencia, terapias conductuales y enfoques contextuales para ofrecer una atención ética, humana y eficaz.",
-    approachItem1: "Un ambiente acogedor, seguro y libre de juicios.",
-    approachItem2: "Adaptación de protocolos de estándar de oro a sus necesidades y contexto de vida.",
-    approachItem3: "Estructura, claridad y seguimiento constante a lo largo del tratamiento.",
-    approachItem4: "Colaboración con un equipo multidisciplinario, cuando sea necesario.",
-    approachItem5: "Promoción de autonomía, autocompasión y conexión con sus valores personales.",
-    approachClosing:
-        "No estará solo(a) en este camino. Juntos construimos una ruta de transformación que respete su ritmo y promueva una vida más alineada y significativa.",
+      "Dar el primer paso puede asustar, más aún tras experiencias difíciles. Por eso nuestro proceso se apoya en tres pilares: claridad, seguridad y colaboración.",
 
-    // Contact Section
-    contactTitle: "Contacto",
-    contactSubtitle: "¿Lista/o para comenzar su viaje hacia la mejora y el crecimiento? Estoy aquí para ayudar.",
-    contactInfo: "Información de Contacto",
-    socialNetworks: "Redes sociales",
-    scheduleConsultationTitle: "Agendar Consulta",
-    consultationDesc:
-        "Ofrezco consultas presenciales y por teleasistencia para adaptarme a sus necesidades. Las consultas iniciales duran 50 minutos e incluyen una evaluación exhaustiva.",
-    officeHours: "Horario de Atención:",
-    mondayThursday: "Lunes - Viernes: 10:00 AM - 10:00 PM GMT-3",
-    bookAppointment: "Reservar Cita",
+    step1Title: "El primer encuentro: acogida y escucha",
+    step1Desc:
+      "Nuestra primera conversación es un espacio protegido. Más que el diagnóstico, quiero entender quién eres, qué te duele y qué buscas.",
+    step1Meta: "50 minutos · crear vínculo y entender tu contexto",
 
-    // Footer
-    licenseNumber: "Psicóloga Clínica Licenciada • CRP 02/18166",
-    copyright: "© 2025 Maria Clara M. Descendente. Todos los derechos reservados.",
+    step2Title: "Evaluación y planificación personalizada",
+    step2Desc:
+      "Aquí la ciencia se adapta a tu vida, no al revés. Con base en protocolos comprobados (ACT, DBT, TCC), trazamos juntos un camino claro.",
+    step2Meta: "Transparencia en cada estrategia · metas reales, a tu ritmo",
+
+    step3Title: "Sesiones de psicoterapia: el trabajo continuo",
+    step3Desc:
+      "Las sesiones son semanales y desarrollan herramientas prácticas para el día a día, uniendo la palabra al entrenamiento de habilidades como la regulación emocional y el mindfulness.",
+    step3Meta: "Enfoque integrativo · centrado en tu autonomía",
+
+    step4Title: "Apoyo multidisciplinario y familiar, cuando es necesario",
+    step4Desc:
+      "Los casos complejos piden una red. Cuando tiene sentido, trabajo con nutricionistas y psiquiatras y ofrezco el Nuevo Modelo Maudsley para que la familia apoye de forma efectiva.",
+    step4Meta: "Una red de apoyo coordinada en torno a ti",
+
+    formatsTitle: "Formatos de atención",
+    formatOnlineTitle: "En línea",
+    formatOnlineDesc: "Plataforma de video segura, con la misma cercanía y ética del consultorio. Para todo Brasil.",
+    formatPresencialTitle: "Presencial",
+    formatPresencialDesc: "Consultorio en Boa Viagem, Recife, un refugio de tranquilidad.",
+
+    finalCtaTitle: "¿Damos el primer paso juntos?",
+    finalCtaText:
+      "No tienes que cargar con esto sola(o). Agenda una primera charla y descubre cómo puedo ayudarte.",
+
+    contactEyebrow: "Contacto",
+    contactTitle: "Estoy cerca cuando decidas empezar",
+    contactSubtitle:
+      "Sin formularios largos. Elige el canal con el que te sientas más cómoda(o) y te respondo personalmente.",
+    contactInfo: "Cómo hablar conmigo",
+    socialNetworks: "Redes",
+    officeHours: "Horario de atención",
+    mondayThursday: "Lunes a viernes · 10h a 22h (GMT-3)",
+    locationLabel: "Boa Viagem, Recife — PE",
+    locationOnline: "y en línea para todo Brasil",
+    bookAppointment: "Hablar por WhatsApp",
+    emailLabel: "Enviar un correo",
+
+    footerClosing: "No tienes que cargar con esto sola(o). ¿Conversamos?",
+    licenseNumber: "Psicóloga clínica · CRP 02/18166",
+    copyright: "© 2025 Maria Clara Descendente. Todos los derechos reservados.",
+    developedBy: "Desarrollado por João Miguel Descendente",
   },
 }

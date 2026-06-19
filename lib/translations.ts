@@ -128,13 +128,13 @@ export const translations = {
     officeHours: "Horário de atendimento",
     mondayThursday: "Segunda a sexta · 10h às 22h (GMT-3)",
     locationLabel: "Boa Viagem, Recife — PE",
-    locationOnline: "e online para todo o Brasil",
+    locationOnline: " ",
     bookAppointment: "Conversar pelo WhatsApp",
     emailLabel: "Enviar um email",
 
     // ---------- Rodapé ----------
     licenseNumber: "Psicóloga clínica · CRP 02/18166",
-    copyright: "© 2025 Maria Clara Descendente. Todos os direitos reservados.",
+    copyright: "© 2026 Maria Clara Descendente. Todos os direitos reservados.",
     developedBy: "Desenvolvido por João Miguel Descendente",
   },
 
@@ -145,15 +145,15 @@ export const translations = {
     contact: "Contact",
     bookConsultation: "Book a talk",
 
-    heroBadge: "Clinical psychologist · CRP 02/18166",
+    heroBadge: "Maria Clara Descendente · Psychologist · CRP 02/18166",
     drName: "Maria Clara Descendente",
     heroHeadline:
-      "Rebuild your relationship with food and rediscover who you are beyond the mirror and the conflict.",
+      "Rebuild your relationship with food and rediscover who you are beyond the mirror.",
     heroSubtitle:
       "Specialized care for eating disorders, grounded in scientific evidence. No judgment, no shortcuts.",
     scheduleConsultation: "Book a first conversation",
     learnMore: "See how I work",
-    heroBadgeOnline: "Online sessions across Brazil",
+    heroBadgeOnline: "Online and in-person sessions",
     heroBadgePresencial: "In person in Boa Viagem, Recife",
     heroBadgeAccepting: "Currently accepting new patients",
 
@@ -163,7 +163,7 @@ export const translations = {
     servicesEyebrow: "Integral care",
     servicesTitle: "Care that sees the whole of you",
     servicesIntro:
-      "Mental health is a complex ecosystem. The conflict with food rarely travels alone: it comes with other pains, or it appears on its own. My focus is integral care for:",
+      "Mental health is a complex ecosystem. Conflict with food rarely walks alone: it comes alongside other forms of pain, or it may appear on its own. My focus is integral, multidisciplinary care.",
 
     edTitle: "Specialized psychotherapy for eating disorders",
     edDesc:
@@ -196,7 +196,7 @@ export const translations = {
     familyTag: "For families and caregivers",
 
     servicesClosing:
-      "Often anxiety, ADHD and emotional dysregulation are the engines that fuel an eating disorder. At other times, they are the main reason someone seeks help. My training lets me see these connections and care for the whole emotional structure, not just put out fires.",
+      "Often anxiety, ADHD and emotional dysregulation are the engines that fuel an eating disorder. At other times, they are the main concern. My training allows me to see these connections and care for the emotional structure as a whole, not just put out fires.",
 
     aboutEyebrow: "My path",
     aboutTitle: "Science in the service of care",
@@ -228,7 +228,7 @@ export const translations = {
     step2Title: "Assessment and personalized planning",
     step2Desc:
       "Here science adapts to your life. Based on proven protocols (ACT, DBT, CBT), we map out a clear path together, with real goals at your pace.",
-    step2Meta: "Transparency on every strategy · no pressure",
+    step2Meta: "Transparency in every strategy",
 
     step3Title: "Therapy sessions: the ongoing work",
     step3Desc:
@@ -245,7 +245,8 @@ export const translations = {
     formatOnlineDesc:
       "A secure video platform, with the same closeness and ethics of the office, from the comfort of your home.",
     formatPresencialTitle: "In person",
-    formatPresencialDesc: "A welcoming office in Boa Viagem, Recife, a refuge of calm.",
+    formatPresencialDesc:
+      "In a welcoming office in Boa Viagem, Recife, prepared to be a refuge of calm during your session.",
 
     finalCtaTitle: "Shall we take the first step together?",
     finalCtaText: "Book a first conversation.",
@@ -257,12 +258,12 @@ export const translations = {
     officeHours: "Office hours",
     mondayThursday: "Monday to Friday · 10am to 10pm (GMT-3)",
     locationLabel: "Boa Viagem, Recife — PE",
-    locationOnline: "and online across Brazil",
+    locationOnline: " ",
     bookAppointment: "Chat on WhatsApp",
     emailLabel: "Send an email",
 
     licenseNumber: "Clinical psychologist · CRP 02/18166",
-    copyright: "© 2025 Maria Clara Descendente. All rights reserved.",
+    copyright: "© 2026 Maria Clara Descendente. All rights reserved.",
     developedBy: "Developed by João Miguel Descendente",
   },
 
@@ -273,15 +274,15 @@ export const translations = {
     contact: "Contacto",
     bookConsultation: "Agendar charla",
 
-    heroBadge: "Psicóloga clínica · CRP 02/18166",
+    heroBadge: "Maria Clara Descendente · Psicóloga · CRP 02/18166",
     drName: "Maria Clara Descendente",
     heroHeadline:
-      "Reconstruye tu relación con la comida y redescubre quién eres más allá del espejo y de los conflictos.",
+      "Reconstruye tu relación con la comida y redescubre quién eres más allá del espejo.",
     heroSubtitle:
       "Atención especializada en trastornos alimentarios, basada en evidencia científica. Sin juicios, sin atajos.",
     scheduleConsultation: "Agendar una primera charla",
     learnMore: "Conocer mi trabajo",
-    heroBadgeOnline: "Atención en línea en todo Brasil",
+    heroBadgeOnline: "Atención en línea y presencial",
     heroBadgePresencial: "Presencial en Boa Viagem, Recife",
     heroBadgeAccepting: "Agenda abierta para nuevos pacientes",
 
@@ -291,7 +292,7 @@ export const translations = {
     servicesEyebrow: "Cuidado integral",
     servicesTitle: "Un cuidado que te ve por completo",
     servicesIntro:
-      "La salud mental es un ecosistema complejo. El conflicto con la comida rara vez camina solo: aparece junto a otros dolores, o de forma independiente. Mi foco es un cuidado integral para:",
+      "La salud mental es un ecosistema complejo. El conflicto con la comida rara vez camina solo: viene junto a otros dolores o aparece de forma independiente. Mi foco es un cuidado integral y multidisciplinario.",
 
     edTitle: "Psicoterapia especializada en trastornos alimentarios",
     edDesc:
@@ -324,7 +325,7 @@ export const translations = {
     familyTag: "Para familias y cuidadores",
 
     servicesClosing:
-      "Muchas veces la ansiedad, el TDAH y la desregulación emocional son los motores que alimentan el trastorno alimentario. En otros momentos, son el principal motivo de consulta. Mi formación me permite ver esas conexiones y cuidar toda la estructura emocional, no solo apagar incendios.",
+      "Muchas veces la ansiedad, el TDAH y la desregulación emocional son los motores que alimentan el trastorno alimentario. En otros momentos, son la demanda principal. Mi formación me permite ver esas conexiones y cuidar la estructura emocional como un todo, no solo apagar incendios.",
 
     aboutEyebrow: "Mi trayectoria",
     aboutTitle: "Ciencia al servicio del cuidado",
@@ -356,7 +357,7 @@ export const translations = {
     step2Title: "Evaluación y planificación personalizada",
     step2Desc:
       "Aquí la ciencia se adapta a tu vida. Con base en protocolos comprobados (ACT, DBT, TCC), trazamos juntos un camino claro, con metas reales a tu ritmo.",
-    step2Meta: "Transparencia en cada estrategia · sin presiones",
+    step2Meta: "Transparencia en cada estrategia",
 
     step3Title: "Sesiones de psicoterapia: el trabajo continuo",
     step3Desc:
@@ -373,7 +374,8 @@ export const translations = {
     formatOnlineDesc:
       "Plataforma de video segura, con la misma cercanía y ética del consultorio, desde la comodidad de tu casa.",
     formatPresencialTitle: "Presencial",
-    formatPresencialDesc: "Un consultorio acogedor en Boa Viagem, Recife, un refugio de tranquilidad.",
+    formatPresencialDesc:
+      "En un consultorio acogedor ubicado en Boa Viagem, Recife, preparado para ser un refugio de tranquilidad durante tu sesión.",
 
     finalCtaTitle: "¿Damos el primer paso juntos?",
     finalCtaText: "Agenda una primera charla.",
@@ -385,12 +387,12 @@ export const translations = {
     officeHours: "Horario de atención",
     mondayThursday: "Lunes a viernes · 10h a 22h (GMT-3)",
     locationLabel: "Boa Viagem, Recife — PE",
-    locationOnline: "y en línea para todo Brasil",
+    locationOnline: " ",
     bookAppointment: "Hablar por WhatsApp",
     emailLabel: "Enviar un correo",
 
     licenseNumber: "Psicóloga clínica · CRP 02/18166",
-    copyright: "© 2025 Maria Clara Descendente. Todos los derechos reservados.",
+    copyright: "© 2026 Maria Clara Descendente. Todos los derechos reservados.",
     developedBy: "Desarrollado por João Miguel Descendente",
   },
 }

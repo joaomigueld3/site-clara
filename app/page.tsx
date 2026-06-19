@@ -328,8 +328,21 @@ export default function PsychologistLanding() {
           </div>
 
           {/* Texto de fechamento */}
-          <Reveal className="mx-auto mt-12 max-w-3xl text-center sm:mt-14">
-            <p className="text-pretty leading-relaxed text-muted-foreground">{t.servicesClosing}</p>
+          <Reveal className="mx-auto mt-12 max-w-4xl sm:mt-14">
+            <Card className="relative gap-0 overflow-hidden border-primary/20 bg-gradient-to-br from-secondary/35 via-card to-accent/10 p-6 shadow-md sm:p-8">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -left-10 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl"
+              />
+              <div className="relative flex items-start gap-4 sm:gap-5">
+                <span className="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/12 text-primary">
+                  <Quote className="h-5 w-5" />
+                </span>
+                <p className="text-pretty font-serif text-lg leading-relaxed text-foreground/85 sm:text-xl">
+                  {t.servicesClosing}
+                </p>
+              </div>
+            </Card>
           </Reveal>
         </div>
       </section>

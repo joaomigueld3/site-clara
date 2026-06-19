@@ -76,8 +76,8 @@ export default function PsychologistLanding() {
       <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-center justify-between gap-2 py-3">
-            <a href="#top" onClick={closeMobileMenu} className="flex min-w-0 items-center gap-2.5">
-              <span className="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-primary/10 ring-1 ring-border">
+            <a href="#top" onClick={closeMobileMenu} className="group flex min-w-0 items-center gap-2.5">
+              <span className="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-primary/10 ring-1 ring-border transition-transform duration-300 group-hover:scale-105">
                 <img src={logoPicture} alt="Logo Maria Clara Descendente" className="h-full w-full object-cover" />
               </span>
               <span className="truncate font-serif text-lg font-semibold tracking-tight">{t.drName}</span>
@@ -99,13 +99,13 @@ export default function PsychologistLanding() {
             </div>
 
             <div className="flex flex-shrink-0 items-center gap-2 sm:gap-3">
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden md:inline-block">
+                <Button className="btn-shine rounded-full">{t.bookConsultation}</Button>
+              </a>
               <div className="hidden md:block">
                 <LanguageSwitcher currentLanguage={currentLanguage} onLanguageChange={setCurrentLanguage} />
               </div>
               <ThemeToggle className="hidden md:inline-flex" />
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="hidden md:inline-block">
-                <Button className="btn-shine rounded-full">{t.bookConsultation}</Button>
-              </a>
               <Button
                 variant="ghost"
                 size="icon"
@@ -279,13 +279,13 @@ export default function PsychologistLanding() {
 
           {/* Bloco principal em destaque */}
           <Reveal variant="scale">
-            <Card className="card-glow relative gap-0 overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-secondary/20 p-6 shadow-md hover:shadow-xl sm:p-9">
+            <Card className="card-glow group relative gap-0 overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-secondary/20 p-6 shadow-md hover:shadow-xl sm:p-9">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 rounded-full bg-primary/10 blur-2xl"
               />
               <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
-                <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm">
+                <span className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
                   <Utensils className="h-7 w-7" />
                 </span>
                 <div className="space-y-3">
@@ -297,19 +297,13 @@ export default function PsychologistLanding() {
             </Card>
           </Reveal>
 
-          {/* Frase de transição */}
-          <Reveal className="my-10 text-center sm:my-12">
-            <p className="mx-auto max-w-2xl text-pretty font-serif text-xl italic text-foreground/80 sm:text-2xl">
-              “{t.servicesBridge}”
-            </p>
-          </Reveal>
-
           {/* Blocos complementares */}
+          <div className="mt-10 sm:mt-12" />
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {complementaryServices.map((service, i) => (
               <Reveal key={service.title} delay={i * 80}>
-                <Card className="card-glow h-full gap-0 border-border/70 p-6 hover:border-primary/30 hover:shadow-lg">
-                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/50 text-primary">
+                <Card className="card-glow group h-full gap-0 border-border/70 p-6 hover:border-primary/30 hover:shadow-lg">
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/50 text-primary transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                     <service.icon className="h-6 w-6" />
                   </span>
                   <h3 className="mb-2 font-serif text-lg font-semibold leading-snug">{service.title}</h3>
@@ -320,8 +314,8 @@ export default function PsychologistLanding() {
 
             {/* Bloco especial: família / Maudsley */}
             <Reveal delay={complementaryServices.length * 80} className="sm:col-span-2 lg:col-span-1">
-              <Card className="card-glow h-full gap-0 border-accent/40 bg-accent/8 p-6 hover:shadow-lg">
-                <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
+              <Card className="card-glow group h-full gap-0 border-accent/40 bg-accent/8 p-6 hover:shadow-lg">
+                <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                   <HeartHandshake className="h-6 w-6" />
                 </span>
                 <span className="mb-2 inline-block text-xs font-medium uppercase tracking-[0.14em] text-accent-foreground/80">
@@ -370,6 +364,10 @@ export default function PsychologistLanding() {
                 {t.aboutEyebrow}
               </span>
               <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.75rem]">{t.aboutTitle}</h2>
+
+              <p className="border-l-2 border-accent/50 pl-4 text-pretty font-serif text-lg italic leading-relaxed text-foreground/80 sm:text-xl">
+                {t.aboutLead}
+              </p>
 
               <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
                 <p>{t.aboutP1}</p>
@@ -430,8 +428,8 @@ export default function PsychologistLanding() {
               className="absolute left-5 top-3 bottom-3 w-px bg-gradient-to-b from-primary/40 via-primary/25 to-transparent sm:left-6"
             />
             {steps.map((step, i) => (
-              <Reveal as="li" key={step.title} delay={i * 90} className="relative pl-16 sm:pl-20">
-                <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-serif text-base font-semibold text-primary-foreground shadow-md ring-4 ring-background sm:h-12 sm:w-12 sm:text-lg">
+              <Reveal as="li" key={step.title} delay={i * 90} className="group relative pl-16 sm:pl-20">
+                <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-serif text-base font-semibold text-primary-foreground shadow-md ring-4 ring-background transition-transform duration-300 group-hover:scale-110 sm:h-12 sm:w-12 sm:text-lg">
                   {i + 1}
                 </span>
                 <Card className="card-glow gap-0 border-border/70 p-5 sm:p-6">
@@ -452,15 +450,15 @@ export default function PsychologistLanding() {
           <Reveal className="mt-14 sm:mt-16">
             <h3 className="mb-5 text-center font-serif text-xl font-semibold sm:text-2xl">{t.formatsTitle}</h3>
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-              <Card className="card-glow gap-0 border-border/70 p-6">
-                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/50 text-primary">
+              <Card className="card-glow group gap-0 border-border/70 p-6">
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/50 text-primary transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                   <Monitor className="h-5 w-5" />
                 </span>
                 <h4 className="mb-1.5 font-serif text-lg font-semibold">{t.formatOnlineTitle}</h4>
                 <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{t.formatOnlineDesc}</p>
               </Card>
-              <Card className="card-glow gap-0 border-border/70 p-6">
-                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent-foreground">
+              <Card className="card-glow group gap-0 border-border/70 p-6">
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent-foreground transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
                   <Home className="h-5 w-5" />
                 </span>
                 <h4 className="mb-1.5 font-serif text-lg font-semibold">{t.formatPresencialTitle}</h4>
@@ -515,9 +513,6 @@ export default function PsychologistLanding() {
               {t.contactEyebrow}
             </span>
             <h2 className="text-display text-balance text-3xl sm:text-4xl lg:text-[2.6rem]">{t.contactTitle}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground sm:text-lg">
-              {t.contactSubtitle}
-            </p>
           </Reveal>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -564,7 +559,12 @@ export default function PsychologistLanding() {
                 </div>
                 <p className="text-sm text-muted-foreground">{t.mondayThursday}</p>
 
-                <p className="mt-5 text-pretty text-sm leading-relaxed text-muted-foreground">{t.contactSubtitle}</p>
+                <div className="mt-2 flex items-start gap-2 text-sm text-muted-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                  <span>
+                    {t.locationLabel} {t.locationOnline}
+                  </span>
+                </div>
 
                 <div className="mt-auto space-y-3 pt-6">
                   <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="block">
@@ -589,10 +589,7 @@ export default function PsychologistLanding() {
       {/* ---------- Rodapé ---------- */}
       <footer className="border-t border-border px-4 py-10 sm:px-6 sm:py-12">
         <div className="mx-auto max-w-6xl">
-          <p className="mx-auto mb-10 max-w-2xl text-center font-serif text-xl italic text-foreground/75 sm:text-2xl">
-            {t.footerClosing}
-          </p>
-          <div className="flex flex-col items-center justify-between gap-6 border-t border-border pt-8 text-center md:flex-row md:gap-0 md:text-left">
+          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:gap-0 md:text-left">
             <div className="flex items-center gap-2.5">
               <span className="h-11 w-11 flex-shrink-0 overflow-hidden rounded-full bg-primary/10 ring-1 ring-border">
                 <img src={logoPicture} alt="Logo Maria Clara Descendente" className="h-full w-full object-cover" />

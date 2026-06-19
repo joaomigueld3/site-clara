@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Globe } from "lucide-react"
+import Image from "next/image"
 
 export type Language = "pt" | "en" | "es"
 
@@ -11,41 +9,41 @@ interface LanguageSwitcherProps {
   onLanguageChange: (language: Language) => void
 }
 
+const languages: { code: Language; name: string; flagSrc: string }[] = [
+  { code: "pt", name: "Português", flagSrc: "/flags/brasil.png" },
+  { code: "es", name: "Español", flagSrc: "/flags/espanha.png" },
+  { code: "en", name: "English", flagSrc: "/flags/uk.png" },
+]
+
 export function LanguageSwitcher({ currentLanguage, onLanguageChange }: LanguageSwitcherProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const languages = [
-    { code: "pt" as Language, name: "Português", flag: "🇧🇷" },
-    { code: "en" as Language, name: "English", flag: "🇺🇸" },
-    { code: "es" as Language, name: "Español", flag: "🇪🇸" },
-  ]
-
   return (
-    <div className="relative">
-      <Button variant="outline" size="sm" onClick={() => setIsOpen(!isOpen)} className="flex items-center space-x-2">
-        <Globe className="w-4 h-4" />
-        <span>{languages.find((l) => l.code === currentLanguage)?.flag}</span>
-      </Button>
-
-      {isOpen && (
-        <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-md shadow-lg z-50 min-w-[120px]">
-          {languages.map((language) => (
-            <button
-              key={language.code}
-              onClick={() => {
-                onLanguageChange(language.code)
-                setIsOpen(false)
-              }}
-              className={`w-full px-3 py-2 text-left hover:bg-muted transition-colors flex items-center space-x-2 ${
-                currentLanguage === language.code ? "bg-muted" : ""
-              }`}
-            >
-              <span>{language.flag}</span>
-              <span className="text-sm">{language.name}</span>
-            </button>
-          ))}
-        </div>
-      )}
+    <div
+      role="group"
+      aria-label="Idioma"
+      className="inline-flex items-center gap-1 rounded-full border border-border bg-card/70 p-1 backdrop-blur"
+    >
+      {languages.map((language) => {
+        const active = currentLanguage === language.code
+        return (
+          <button
+            key={language.code}
+            type="button"
+            onClick={() => onLanguageChange(language.code)}
+            title={language.name}
+            aria-label={language.name}
+            aria-pressed={active}
+            className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-medium transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 ${
+              active
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <span className={`overflow-hidden rounded-full transition-transform duration-300 ${active ? "scale-110" : "hover:scale-125"}`}>
+              <Image src={language.flagSrc} alt="" aria-hidden width={20} height={20} className="h-5 w-5 object-cover" />
+            </span>
+          </button>
+        )
+      })}
     </div>
   )
 }

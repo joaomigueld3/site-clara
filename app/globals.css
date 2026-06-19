@@ -1,62 +1,99 @@
-/* globals.css – Tema inspirado em clara-tema.jpeg (aquarela, creme, verde folha, pêssego) */
+/* globals.css — Identidade visual inspirada em tema2.jpg
+   (creme quente, verde-salva/musgo, terracota suave, luz natural, plantas) */
 
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-:root {
-  /* Fundo central creme/bege (como no cartão) */
-  --background: oklch(0.98 0.015 95);
-  --foreground: oklch(0.28 0.02 260);
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --card: oklch(1 0.008 95);
+:root {
+  /* Fundo creme quente, como a parede iluminada do tema */
+  --background: oklch(0.965 0.016 88);
+  --foreground: oklch(0.29 0.045 146);
+
+  --card: oklch(0.99 0.01 90);
   --card-foreground: var(--foreground);
 
-  /* Verde folha (logo e botões) */
-  --primary: oklch(0.52 0.14 145);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Verde-musgo profundo (textos de destaque, botões) */
+  --primary: oklch(0.45 0.078 146);
+  --primary-foreground: oklch(0.985 0.014 90);
 
-  /* Verde menta / água-marinha (manchas aquarela) */
-  --secondary: oklch(0.88 0.06 175);
-  --secondary-foreground: var(--foreground);
+  /* Verde-salva claro (manchas, badges) */
+  --secondary: oklch(0.89 0.045 138);
+  --secondary-foreground: oklch(0.33 0.055 146);
 
-  /* Pêssego/coral suave (manchas aquarela) */
-  --accent: oklch(0.82 0.08 55);
-  --accent-foreground: oklch(0.28 0.04 50);
+  /* Terracota / areia dourada (destaque sutil, agora mais vivo) */
+  --accent: oklch(0.72 0.105 51);
+  --accent-foreground: oklch(0.30 0.065 49);
 
-  --muted: oklch(0.94 0.02 120);
-  --muted-foreground: oklch(0.48 0.03 150);
+  --muted: oklch(0.93 0.024 102);
+  --muted-foreground: oklch(0.46 0.035 142);
 
-  --border: oklch(0.88 0.02 115);
-  --input: oklch(0.90 0.02 115);
-  --ring: var(--primary);
+  --border: oklch(0.87 0.026 122);
+  --input: oklch(0.89 0.026 122);
+  --ring: oklch(0.52 0.08 146);
 
-  --popover: oklch(1 0.008 95);
+  --popover: oklch(0.99 0.01 90);
   --popover-foreground: var(--foreground);
 
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.55 0.20 28);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --chart-1: oklch(0.52 0.14 145);
-  --chart-2: oklch(0.75 0.10 175);
-  --chart-3: oklch(0.82 0.08 55);
-  --chart-4: oklch(0.65 0.12 145);
-  --chart-5: oklch(0.70 0.08 65);
-  --radius: 0.625rem;
+  --chart-1: oklch(0.45 0.078 146);
+  --chart-2: oklch(0.66 0.08 150);
+  --chart-3: oklch(0.72 0.105 51);
+  --chart-4: oklch(0.57 0.07 132);
+  --chart-5: oklch(0.69 0.09 70);
+  --radius: 0.75rem;
 
-  --sidebar: oklch(0.985 0.01 95);
+  --sidebar: oklch(0.97 0.014 90);
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: oklch(0.94 0.02 95);
+  --sidebar-accent: oklch(0.92 0.024 95);
   --sidebar-accent-foreground: var(--foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--ring);
 }
 
+/* ---------- Modo noturno: mesmo tema, porém escuro e quente ---------- */
+.dark {
+  --background: oklch(0.23 0.024 150);
+  --foreground: oklch(0.93 0.022 92);
+
+  --card: oklch(0.275 0.028 150);
+  --card-foreground: var(--foreground);
+
+  --primary: oklch(0.66 0.105 146);
+  --primary-foreground: oklch(0.18 0.03 150);
+
+  --secondary: oklch(0.35 0.045 150);
+  --secondary-foreground: oklch(0.92 0.025 120);
+
+  --accent: oklch(0.70 0.115 51);
+  --accent-foreground: oklch(0.19 0.045 49);
+
+  --muted: oklch(0.31 0.024 150);
+  --muted-foreground: oklch(0.75 0.03 122);
+
+  --border: oklch(0.37 0.028 150);
+  --input: oklch(0.37 0.028 150);
+  --ring: oklch(0.66 0.105 146);
+
+  --popover: oklch(0.275 0.028 150);
+  --popover-foreground: var(--foreground);
+
+  --sidebar: oklch(0.255 0.026 150);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-accent: oklch(0.32 0.03 150);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+}
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -101,24 +138,179 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv01";
   }
-  /* Melhor toque em mobile: área de toque e menos delay */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  /* Transição suave ao alternar claro/escuro */
+  body,
+  .theme-watercolor,
+  [data-slot="card"] {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+  }
+  /* Títulos serifados — autoridade + acolhimento */
+  .font-serif {
+    font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+    font-optical-sizing: auto;
+  }
+  ::selection {
+    background: oklch(0.72 0.105 51 / 0.35);
+  }
   @media (hover: none) and (pointer: coarse) {
     a, button {
       -webkit-tap-highlight-color: transparent;
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
-/* Fundo aquarelado do tema (bordas com manchas verde menta e pêssego) – aplicar no container principal */
 @layer components {
+  /* Fundo aquarelado suave do tema — manchas de salva e terracota nos cantos */
   .theme-watercolor {
     background:
-      radial-gradient(ellipse 90% 60% at 0% 0%, rgba(173, 212, 196, 0.6), transparent 55%),
-      radial-gradient(ellipse 85% 55% at 100% 0%, rgba(244, 183, 161, 0.55), transparent 55%),
-      radial-gradient(ellipse 85% 60% at 0% 100%, rgba(244, 183, 161, 0.55), transparent 55%),
-      radial-gradient(ellipse 90% 55% at 100% 100%, rgba(173, 212, 196, 0.6), transparent 55%),
+      radial-gradient(ellipse 70% 50% at 0% 0%, oklch(0.82 0.07 145 / 0.55), transparent 60%),
+      radial-gradient(ellipse 65% 45% at 100% 8%, oklch(0.80 0.09 52 / 0.38), transparent 60%),
+      radial-gradient(ellipse 75% 50% at 100% 100%, oklch(0.82 0.07 145 / 0.48), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 0% 92%, oklch(0.80 0.09 52 / 0.32), transparent 60%),
       var(--background);
-    min-height: 100vh;
   }
+  .dark .theme-watercolor {
+    background:
+      radial-gradient(ellipse 70% 50% at 0% 0%, oklch(0.55 0.09 150 / 0.30), transparent 60%),
+      radial-gradient(ellipse 65% 45% at 100% 8%, oklch(0.58 0.10 52 / 0.20), transparent 60%),
+      radial-gradient(ellipse 75% 50% at 100% 100%, oklch(0.55 0.09 150 / 0.28), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 0% 92%, oklch(0.58 0.10 52 / 0.16), transparent 60%),
+      var(--background);
+  }
+
+  .text-display {
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+  }
+
+  /* Pílula de seção, como o selo do tema */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary;
+  }
+
+  /* Link de navegação com sublinhado animado */
+  .nav-link {
+    @apply relative text-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    height: 2px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Animações e hovers ---------- */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.96) translateY(18px);
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-scale.is-visible { opacity: 1; transform: none; }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+  @keyframes float-slower {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+  .animate-float-slower { animation: float-slower 10s ease-in-out infinite; }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+  }
+  .animate-fade-in-up { animation: fade-in-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.82); }
+  }
+  .animate-gentle-pulse { animation: gentle-pulse 2.4s ease-in-out infinite; }
+
+  /* Movimento lento da paleta aquarela */
+  @keyframes hue-drift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(0, -2%, 0) scale(1.04); }
+  }
+
+  /* Elevação no hover */
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-6px);
+  }
+
+  /* Brilho suave no hover dos cartões */
+  .card-glow {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.4s ease;
+  }
+  .card-glow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px -18px oklch(0.45 0.078 146 / 0.45);
+    border-color: oklch(0.52 0.08 146 / 0.45);
+  }
+
+  /* Zoom suave em imagens dentro de um grupo */
+  .img-zoom { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+  .group:hover .img-zoom { transform: scale(1.05); }
+
+  /* Botão com brilho deslizante */
+  .btn-shine { position: relative; overflow: hidden; }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+  }
+  .btn-shine:hover::after { transform: translateX(120%); }
+
+  /* Ícone de tema que gira ao trocar */
+  .theme-icon { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease; }
 }

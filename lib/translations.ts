@@ -24,13 +24,13 @@ export const translations = {
 
     // ---------- Acolhimento ----------
     empathyText:
-      "Se você sente que sua jornada com o corpo e a comida tem sido uma batalha solitária, aqui sua dor é ouvida sem julgamentos. Respeito seu ritmo e sua história, oferecendo um espaço seguro para você, enfim, respirar com leveza.",
+      "Se você sente que sua jornada com o corpo e a comida tem sido uma batalha solitária, aqui sua dor é ouvida sem julgamentos. Respeito seu ritmo e sua história, oferecendo um espaço seguro para você, respirar com leveza.",
 
     // ---------- Serviços ----------
     servicesEyebrow: "Cuidado integral",
     servicesTitle: "Um cuidado que enxerga você por inteiro",
     servicesIntro:
-      "A saúde mental é um ecossistema complexo. O conflito com a comida raramente caminha sozinho: ele vem junto de outras dores ou aparece de forma independente. Meu foco é um cuidado integral para:",
+      "A saúde mental é um ecossistema complexo. O conflito com a comida raramente caminha sozinho: ele vem junto de outras dores ou aparece de forma independente. Meu foco é um cuidado integral e multidisciplinar.",
 
     edTitle: "Psicoterapia especializada em transtornos alimentares",
     edDesc:
@@ -39,7 +39,7 @@ export const translations = {
 
     mindfulnessTitle: "Mindfulness e autocompaixão",
     mindfulnessDesc:
-      "Ferramentas práticas para acalmar a mente, regular emoções e cultivar uma relação mais gentil consigo mesma.",
+      "Ferramentas práticas para acalmar a mente, regular emoções e cultivar uma relação mais gentil consigo mesma(o).",
 
     anxietyTitle: "Ansiedade, fobias e TOC",
     anxietyDesc:
@@ -73,9 +73,9 @@ export const translations = {
     aboutP1:
       "Há mais de 10 anos, escolhi a psicologia como o meu modo de estar no mundo. Sempre fui movida pela curiosidade sobre o comportamento humano e pelo desejo genuíno de ajudar as pessoas a encontrarem sentido e resiliência em suas jornadas. Para mim, a clínica é um lugar de encontro pautado pela ética, pela responsabilidade e, acima de tudo, pela autenticidade.",
     aboutP2:
-      "Acredito que cada pessoa é única. Por isso, ao longo da última década, mergulhei nos estudos para que o meu acolhimento tivesse o suporte da ciência mais avançada. Cursei o Mestrado em Neuropsiquiatria e Ciências do Comportamento na UFPE, com especializações em Terapia Cognitivo Comportamental e Neurociência Aplicada.",
+      "Acredito que cada pessoa é única. Por isso, ao longo da última década, mergulhei nos estudos para que o meu acolhimento tivesse o suporte da ciência mais avançada. Cursei o Mestrado em Neuropsiquiatria e Ciências do Comportamento na Universidade Federal de Pernambuco, além de especializações em Terapia Cognitivo Comportamental e Neurociência Aplicada.",
     aboutP3:
-      "Transtornos alimentares e comportamentos complexos exigem um olhar muito especializado. Por isso, me formei com as maiores referências mundiais da área:",
+      "Transtornos alimentares e comportamentos complexos exigem um olhar hiper-especializado. Por isso, me formei com as maiores referências mundiais da área:",
     aboutRef1: "Manejo de casos complexos com Lucene Wisniewski (CBT Ohio) e Rhonda Merwin (Duke University)",
     aboutRef2: "Terapia de Aceitação e Compromisso (ACT) com o seu criador, Steven Hayes",
     aboutRef3: "Protocolos para anorexia: MANTRA (CEBRATA) e SSCM (University of Sydney)",
@@ -92,12 +92,12 @@ export const translations = {
     step1Title: "O encontro inicial: acolhimento e escuta",
     step1Desc:
       "A nossa primeira conversa é um espaço protegido. Mais que o diagnóstico, quero entender quem você é, as suas dores e o que você busca.",
-    step1Meta: "50 minutos · criar vínculo e entender o seu contexto",
+    step1Meta: "50 minutos · criar vínculo e entender seu contexto",
 
     step2Title: "Avaliação e planejamento personalizado",
     step2Desc:
       "Aqui a ciência se adapta à sua vida. Com base em protocolos comprovados (ACT, DBT, TCC), traçamos juntos um caminho claro, com metas reais no seu ritmo.",
-    step2Meta: "Transparência em cada estratégia · sem pressões",
+    step2Meta: "Transparência em cada estratégia",
 
     step3Title: "Sessões de psicoterapia: o trabalho contínuo",
     step3Desc:
@@ -114,7 +114,7 @@ export const translations = {
     formatOnlineDesc:
       "Plataforma de vídeo segura, com a mesma proximidade e ética do consultório, no conforto da sua casa.",
     formatPresencialTitle: "Presencial",
-    formatPresencialDesc: "Consultório acolhedor em Boa Viagem, Recife, um refúgio de tranquilidade.",
+    formatPresencialDesc: "Em consultório acolhedor localizado em Boa Viagem, Recife, preparado para ser um refúgio de tranquilidade durante a sua sessão.",
 
     // ---------- CTA final ----------
     finalCtaTitle: "Vamos dar o primeiro passo juntos?",
